@@ -25,6 +25,13 @@ class Post extends Component {
       .catch(err => {
         console.log(err);
       });
+
+    const script = document.createElement("script");
+
+    script.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b91dee06e5d3db1';
+    script.async = true;
+
+    document.body.appendChild(script);
   };
 
   render() {
