@@ -12,6 +12,8 @@ class Meta extends Component {
   render() {
     if (!this.state.loading) {
       let page = this.props.page;
+      let image = page.acf.metaImage;
+
       return (
         <Fragment>
           <section id={this.props.id} className="about-section text-center">
@@ -30,9 +32,15 @@ class Meta extends Component {
                 </div>
               )}
               <img
-                src={page.acf.metaImage || ''}
+                src={image.url} 
+                srcSet={
+                  image.sizes.thumbnail + " 150w," + 
+                  image.sizes.medium + " 300w," + 
+                  image.sizes.large + " 525w," +
+                  image.url + " 2000w" 
+                }
                 className="img-fluid"
-                alt="Meme and Meaning"
+                alt={image.alt}
                 style={{
                   width: page.acf.metaImageWidth || '60vw',
                 }}

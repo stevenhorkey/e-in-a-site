@@ -38,7 +38,7 @@ class PageWrapper extends Component {
           <Fragment>
             {/* If home page, don't show default header structure */}
             {page.title.rendered === 'Home' ? null : (
-              <ComponentIndex.Header headImage={page.acf.featuredImage}>
+              <ComponentIndex.Header headImage={page.acf.featuredImage.url}>
                 <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
                   {page.title.rendered}
                 </h1>

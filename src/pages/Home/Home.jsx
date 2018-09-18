@@ -30,7 +30,7 @@ class Home extends Component {
       let page = this.props.page;
       return (
         <Fragment>
-          <ComponentIndex.Header headImage={page.acf.featuredImage}>
+          <ComponentIndex.Header headImage={page.acf.featuredImage.url}>
             <img
               src={logo}
               className="mx-auto"

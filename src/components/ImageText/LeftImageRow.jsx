@@ -10,6 +10,7 @@ class LeftImageRow extends Component {
 
   render() {
     let post = this.props.post;
+    let image = this.props.post.acf.featuredImage;
     if (!this.state.loading) {
       return (
         <Fragment>
@@ -21,8 +22,13 @@ class LeftImageRow extends Component {
               <div className="col-lg-6">
                 <img
                   className="img-fluid"
-                  src={post.acf.featuredImage}
-                  alt={post.title.rendered}
+                  src={image.url} 
+                  srcSet={
+                    image.sizes.thumbnail + " 150w," + 
+                    image.sizes.medium + " 300w," + 
+                    image.sizes.large + " 525w" 
+                  }
+                  alt={image.alt}
                   style={{
                     objectFit: 'cover',
                     height: '33rem',

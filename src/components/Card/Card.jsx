@@ -11,6 +11,7 @@ class Card extends Component {
 
   render() {
     if (!this.state.loading) {
+      let image = this.props.backgroundImage;
       return (
         <Fragment>
           <div
@@ -20,7 +21,7 @@ class Card extends Component {
             style={{
               backgroundImage:
                 "linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)), url('" +
-                this.props.backgroundImage +
+                image.url +
                 "')",
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
@@ -29,6 +30,19 @@ class Card extends Component {
               paddingTop: '7%',
             }}
           >
+            {/* <img
+            className="img-fluid"
+            srcSet={
+              image.sizes.thumbnail + " 150w," + 
+              image.sizes.medium + " 300w," + 
+              image.sizes.large + " 525w" 
+            }
+            alt={image.alt}
+            style={{
+              objectFit: 'cover',
+              position: 'relative'
+            }}
+            /> */}
             <div className="container h-100 d-flex align-items-center">
               <div className="row mx-auto">
                 <a href={Parser(this.props.link)}>
