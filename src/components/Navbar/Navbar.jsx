@@ -13,7 +13,7 @@ class Navbar extends Component {
     // Add navbar jquery actions script after mount
     const script = document.createElement("script");
 
-    script.src = "/js/grayscale.js";
+    script.src = "/js/grayscale.min.js";
     script.async = true;
 
     document.body.appendChild(script);
