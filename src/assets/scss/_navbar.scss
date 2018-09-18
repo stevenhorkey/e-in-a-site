@@ -1,0 +1,84 @@
+#mainNav {
+  min-height: 56px;
+  background-color: $black;
+  text-transform: uppercase;
+  transition: ease-in-out 200ms;
+  .navbar-toggler {
+    font-size: 80%;
+    padding: 0.75rem;
+    color: $primary;
+    border: 1px solid $primary;
+    &:focus {
+      outline: none;
+    }
+  }
+  .navbar-brand {
+    color: $gray-100;
+    font-weight: 700;
+    padding: 0.9rem 0;
+  }
+  .navbar-nav {
+    .nav-item {
+      &:hover {
+        color: fade(gray-100, 80%);
+        outline: none;
+        background-color: transparent;
+      }
+      &:active,
+      &:focus {
+        outline: none;
+        background-color: transparent;
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    .navbar-brand {
+      padding: 0.5rem 0;
+      color: fade-out($gray-100, 0.5);
+    }
+    .nav-link {
+      transition: none;
+      padding: 2rem 1.5rem;
+      color: fade-out($gray-100, 0.5);
+      &:hover {
+        color: fade-out($gray-100, 0.25);
+      }
+      &:active {
+        color: gray-100;
+      }
+    }
+    &.navbar-shrink {
+      background-color: $black;
+      border-bottom: $gray-100 solid 1px;
+      .navbar-brand {
+        color: $gray-100;
+      }
+      .nav-link {
+        color: $gray-100;
+        padding: 1.5rem 1.5rem 1.25rem;
+        border-bottom: 0.25rem solid transparent;
+        &:hover {
+          color: $primary;
+        }
+        &:active {
+          color: darken($primary, 15%);
+        }
+        &.active {
+          color: $primary;
+          outline: none;
+          border-bottom: 0.25rem solid $primary;
+        }
+      }
+    }
+  }
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $gray-100;
+  text-align: center;
+}
