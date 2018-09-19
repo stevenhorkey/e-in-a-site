@@ -43,6 +43,7 @@ class Meta extends Component {
                 alt={image.alt}
                 style={{
                   width: page.acf.metaImageWidth || '60vw',
+                  maxWidth: 1000
                 }}
               />
             </div>
