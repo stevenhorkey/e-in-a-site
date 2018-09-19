@@ -51,7 +51,7 @@ class Post extends Component {
             item={post}
           />
 
-          <ComponentIndex.Header headImage={post.acf.featuredImage}>
+          <ComponentIndex.Header headImage={post.acf.featuredImage.url}>
             <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
               {Parser(post.title.rendered)}
             </h1>

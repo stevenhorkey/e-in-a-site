@@ -42,7 +42,7 @@ class Meta extends Component {
                 className="img-fluid"
                 alt={image.alt}
                 style={{
-                  width: page.acf.metaImageWidth || '60vw',
+                  width: page.acf.metaImageWidth || '100%',
                   maxWidth: 1000
                 }}
               />

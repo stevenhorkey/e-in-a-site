@@ -15,7 +15,7 @@ class Header extends Component {
             className="masthead d-flex h-100 align-items-center"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 1)), url('" +
+                "linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.6)), url('" +
                 this.props.headImage +
                 "')",
               minHeight: '100vh',
