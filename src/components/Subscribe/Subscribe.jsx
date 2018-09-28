@@ -22,11 +22,7 @@ class Mailchimp extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const mcUrl = 'https://memeandmeaning.us16.list-manage.com/subscribe/post?u=4c73c4e387b1f2b219c1f2af6&amp;id=d25ec94b8f';
-    const { fields, action } = this.props;
-    // const values = fields.map(field => {
-    //   return `${field.name}=${encodeURIComponent(this.state[field.name])}`;
-    // }).join("&");
+    const action = 'https://memeandmeaning.us16.list-manage.com/subscribe/post?u=4c73c4e387b1f2b219c1f2af6&amp;id=d25ec94b8f';
     let fname = `${"FNAME"}=${encodeURIComponent(this.state["FNAME"])}`;
     let lname = `${"LNAME"}=${encodeURIComponent(this.state["LNAME"])}`;
     let em = `${"EMAIL"}=${encodeURIComponent(this.state["EMAIL"])}`;
@@ -35,7 +31,7 @@ class Mailchimp extends Component {
     const url = path.replace('/post?', '/post-json?');
     const regex = /^([\w_\.\-\+])+\@([\w\-]+\.)+([\w]{2,10})+$/;
     const email = this.state['EMAIL'];
-    (!regex.test(email)) ? this.setState({ status: "empty" }) : this.sendData(mcUrl);
+    (!regex.test(email)) ? this.setState({ status: "empty" }) : this.sendData(url);
 
   };
 
@@ -97,41 +93,6 @@ class Mailchimp extends Component {
               <small className="text-muted text-center d-block">No spam ever</small>
             </form>
           </div>
-          {/* <Mailchimp
-            action='https://memeandmeaning.us16.list-manage.com/subscribe/post?u=4c73c4e387b1f2b219c1f2af6&amp;id=d25ec94b8f'
-            fields={[
-              {
-                name: 'FNAME',
-                placeholder: 'First name',
-                type: 'text',
-                label: "First Name",
-                required: false
-              },
-              {
-                name: 'LNAME',
-                placeholder: 'Last Name',
-                type: 'text',
-                required: false
-              },
-              {
-                name: 'EMAIL',
-                placeholder: 'youremail@example.com',
-                type: 'email',
-                required: true
-              }
-              
-            ]}
-            message={
-              {
-                sending: "Sending...",
-                success: "Thank you for subscribing!",
-                error: "An unexpected internal error has occurred.",
-                empty: "You must write an e-mail.",
-                duplicate: "Too many subscribe attempts for this email address",
-                button: "Subscribe!"
-              }
-            }
-            /> */}
         </Fragment>
       );
     }
@@ -144,7 +105,7 @@ Mailchimp.defaultProps = {
     success: "Thank you for subscribing!",
     error: "An unexpected internal error has occurred.",
     empty: "You must write an e-mail.",
-    duplicate: "Too many subscribe attempts for this email address",
+    duplicate: "Too many subscribe attempts for this email address.",
     button: 'Subscribe!'
   },
   styles: {
@@ -155,7 +116,7 @@ Mailchimp.defaultProps = {
       color: '#009432'
     },
     duplicateMsg: {
-      color: '#EE5A24'
+      color: '#ED4C67'
     },
     errorMsg: {
       color: '#ED4C67'

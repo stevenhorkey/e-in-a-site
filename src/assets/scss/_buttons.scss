@@ -21,3 +21,9 @@
     background-color: darken($primary, 15%) !important;
   }
 }
+
+.btn-primary.disabled, .btn-primary:disabled{
+    color: black;
+    background-color: $gray-100;
+    border-color: $gray-100;
+}

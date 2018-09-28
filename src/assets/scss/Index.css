@@ -4,7 +4,8 @@
   min-height: 56px;
   background-color: #000000;
   text-transform: uppercase;
-  transition: ease-in-out 200ms; }
+  transition: ease-in-out 200ms;
+  border-bottom: white 1px solid; }
   #mainNav .nav-container {
     max-width: 2000px; }
   #mainNav .navbar-toggler {
@@ -131,6 +132,11 @@
   .btn-primary:active {
     background-color: #e47614 !important; }
 
+.btn-primary.disabled, .btn-primary:disabled {
+  color: black;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa; }
+
 .about-section {
   padding-top: 5rem;
   background: linear-gradient(to bottom, #000000 0%, black 75%, rgba(0, 0, 0, 0.82) 100%); }
@@ -179,10 +185,9 @@
     letter-spacing: 0.15rem;
     border: 0; }
 
-@media only screen and (max-width: 550px) {
-  .email-header .newsletter-header {
-    font-size: 2rem;
-    text-align: left; } }
+.newsletter-header {
+  font-size: 4vw;
+  text-align: left; }
 
 .contact-section {
   padding: 5rem 0 0; }

@@ -51,10 +51,10 @@ class Home extends Component {
             </div> */}
           </ComponentIndex.Header>
           
-          <section className="bg-black py-5 text-white">
+          <section className="bg-black text-white">
             <div className="container text-center ">
               <div className="row d-flex align-items-center">
-                <div className='col-md-6'>
+                <div className='col-md-6 py-5'>
                   <div className="container">
                     <h2 className="text-uppercase">Welcome</h2>
                     <div className="text-left ">
@@ -87,7 +87,7 @@ class Home extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 py-5">
                   <ComponentIndex.Subscribe/>
                 </div>
               </div>
@@ -109,7 +109,7 @@ class Home extends Component {
               </div>
             </div>
           </section> */}
-          <section className="bg-white py-4">
+          <section className="bg-white py-5">
             <div className="container text-center">
               <div className='row w-100 m-auto'>
                 <h2 className="mr-auto text-uppercase font-weight-bold pt-1 mb-0">Recent Posts</h2>
