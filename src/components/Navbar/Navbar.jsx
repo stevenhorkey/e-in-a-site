@@ -27,7 +27,7 @@ class Navbar extends Component {
             className="navbar navbar-expand-lg navbar-light fixed-top"
             id="mainNav"
           >
-            <div className="container">
+            <div className="nav-container container">
               <a className="navbar-brand js-scroll-trigger scale-item" href="/">
                 {Parser(this.props.site.name)}
               </a>
@@ -46,26 +46,26 @@ class Navbar extends Component {
               <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item">
-                    <a className="nav-link js-scroll-trigger" href="/#about">
+                    <a className="nav-link js-scroll-trigger" href="/about">
                       About
                     </a>
                   </li>
                   {/* <li className="nav-item">
-                                    <a className="nav-link js-scroll-trigger" href="/music">Music</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link js-scroll-trigger" href="/downloads">Downloads</a>
-                                </li> */}
+                      <a className="nav-link js-scroll-trigger" href="/music">Music</a>
+                  </li>
+                  <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="/downloads">Downloads</a>
+                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/blog">
                       Blog
                     </a>
                   </li>
-                  {/* <li className="nav-item">
+                  <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/podcast">
                       Podcast
                     </a>
-                  </li> */}
+                  </li>
                   {/* <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/#contact">
                       Contact

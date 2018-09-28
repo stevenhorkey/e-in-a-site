@@ -1,0 +1,24 @@
+.card{
+    border-radius: 1px;
+    a{
+        color: black;
+    }
+    a:hover{
+        color: black;
+    }
+    .card-img-top{
+        border-radius: 1px;
+    }
+    .card-title{
+        // text-transform: uppercase;
+    }
+    .card-body{
+        padding: 0.6rem !important;
+    }
+}
+.card:hover{
+    border: 1px $primary solid;
+    img: {
+        zoom: 2;
+    }
+}

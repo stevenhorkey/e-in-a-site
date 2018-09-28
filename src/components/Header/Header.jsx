@@ -12,7 +12,7 @@ class Header extends Component {
       return (
         <Fragment>
           <header
-            className="masthead d-flex h-100 align-items-center"
+            className="masthead"
             style={{
               backgroundImage:
                 "linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.6)), url('" +
@@ -21,8 +21,10 @@ class Header extends Component {
               minHeight: '100vh',
             }}
           >
-            <div className="container">
-              <div className="mx-auto text-center">{this.props.children}</div>
+            <div className="container h-100">
+              <div className="d-flex h-100 align-items-center text-center">
+                {this.props.children}
+              </div>
             </div>
           </header>
         </Fragment>

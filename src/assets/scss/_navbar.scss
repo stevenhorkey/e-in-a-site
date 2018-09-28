@@ -3,6 +3,9 @@
   background-color: $black;
   text-transform: uppercase;
   transition: ease-in-out 200ms;
+  .nav-container{
+    max-width: 2000px;
+  }
   .navbar-toggler {
     font-size: 80%;
     padding: 0.75rem;

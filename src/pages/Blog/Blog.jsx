@@ -43,14 +43,7 @@ class Blog extends Component {
                 return (
                   <Fragment key={key}>
                     <ComponentIndex.Card
-                      backgroundImage={post.acf.featuredImage}
-                      title={post.title.rendered}
-                      link={
-                        '/' +
-                        page.title.rendered.toLowerCase() +
-                        '/' +
-                        post.slug
-                      }
+                      item={post}
                     />
                   </Fragment>
                 );

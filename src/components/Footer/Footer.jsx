@@ -11,10 +11,17 @@ class Footer extends Component {
     if (!this.state.loading) {
       return (
         <Fragment>
-          <footer className="bg-black small text-center text-white-50">
+          <footer className="bg-black small text-white-50">
             <div className="container">
-              Copyright &copy; {this.props.site.name} 2017 -{' '}
-              {new Date().getFullYear()}
+              <div className="row">
+                <div className="mx-auto">
+
+                </div>
+              </div>
+              <div className="row">
+                <small className="mx-auto">Copyright &copy; {this.props.site.name} 2017 -{' '}
+                {new Date().getFullYear()}</small>
+              </div>  
             </div>
           </footer>
         </Fragment>

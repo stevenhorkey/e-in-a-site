@@ -59,17 +59,15 @@ class Post extends Component {
           <article id={post.slug} className="post-section bg-light py-3">
             <div className="container text-center mb-5">
               <div className="row">
-                <small className="font-italic col-sm-3 text-left">
+                <small className="font-italic col-sm-6 text-left">
                   {Parser(post.title.rendered)}
                 </small>
-                <small className="font-italic col-sm-6 text-center">
+                <small className="font-italic col-sm-6 text-right">
                   Published on {date}{' '}
                   {date !== modified ? 'and updated on ' + modified : null}
                 </small>
                 {/* <small className="font-italic col-sm-3 text-right">{Parser(post.acf.author)}</small> */}
-                <small className="font-italic col-sm-3 text-right">
-                  Image by {post.acf.imageAuthor}
-                </small>
+                
               </div>
               <hr />
               <div className="text-justify written-copy">
@@ -90,6 +88,15 @@ class Post extends Component {
                 src={signature}
                 width="220px"
               />
+              <hr/>
+              <div className="row">
+                  <small className="font-italic col-sm-6 text-left">
+                    {Parser(post.title.rendered)}
+                  </small>
+                  <small className="font-italic col-sm-6 text-right">
+                    Image by {post.acf.imageAuthor}
+                  </small>
+              </div>
             </div>
           </article>
         </Fragment>

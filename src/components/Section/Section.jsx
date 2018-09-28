@@ -15,13 +15,13 @@ class Section extends Component {
         <Fragment>
           <section
             id={sectionName.toLowerCase()}
-            className={sectionName.toLowerCase() + '-section bg-light py-5'}
+            className={sectionName.toLowerCase() + '-section bg-light'}
             style={{
               // backgroundImage: "linear-gradient(rgb(1,1,0.4),rgb(1,1,0.4)), url("+backgroundImage+")",
               backgroundAttachment: 'fixed',
             }}
           >
-            <div className="container">{this.props.children}</div>
+            <div className="container" style={this.props.containerStyle}>{this.props.children}</div>
           </section>
         </Fragment>
       );
