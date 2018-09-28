@@ -13,5 +13,5 @@ export default {
   getPages: () => axios.get(url + 'pages'),
   getPost: slug => axios.get(url + 'posts?slug=' + slug),
   getPage: () => axios.get(url + 'page'),
-  mcAddSubscriber: (data) => axios.put('https://us16.api.mailchimp.com/3.0/lists/' + mcListId + '/members' + md5(data.email_address), data)
+  mcAddSubscriber: (data) => axios.post('https://memeandmeaning.us16.list-manage.com/subscribe/post?u=4c73c4e387b1f2b219c1f2af6&amp;id=d25ec94b8f', data)
 };

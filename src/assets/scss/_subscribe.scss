@@ -24,3 +24,12 @@
     }
   }
 }
+
+.email-header{
+  @media only screen and (max-width: 550px) {
+    .newsletter-header {
+        font-size: 2rem;
+        text-align: left;
+    }
+  }
+}

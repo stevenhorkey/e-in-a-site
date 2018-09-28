@@ -179,6 +179,11 @@
     letter-spacing: 0.15rem;
     border: 0; }
 
+@media only screen and (max-width: 550px) {
+  .email-header .newsletter-header {
+    font-size: 2rem;
+    text-align: left; } }
+
 .contact-section {
   padding: 5rem 0 0; }
   .contact-section .card {
@@ -227,7 +232,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
-  background: #f8f9fa; }
+  background: #f8f9fa;
+  min-width: 320px; }
 
 p {
   font-size: 18px; }
