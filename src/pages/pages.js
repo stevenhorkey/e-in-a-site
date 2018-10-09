@@ -1,7 +1,7 @@
 import Home from './Home/Home';
 import Post from './Post/Post';
 import About from './About/About';
-import Blog from './Blog/Blog';
+import Content from './Content/Content';
 import Podcast from './Podcast/Podcast';
 import Downloads from './Downloads/Downloads';
 import NotFound from './NotFound/NotFound';
@@ -11,7 +11,7 @@ const PageIndex = {
   Post,
   About,
   NotFound,
-  Blog,
+  Content,
   Podcast,
   Downloads,
 };

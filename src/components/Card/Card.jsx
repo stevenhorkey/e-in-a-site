@@ -23,7 +23,7 @@ class Card extends Component {
 
           <div className="col-md-4 my-3">
               <div className="card scale-item">
-                <a className="item-scale" href={"/blog/"+item.slug}>
+                <a className="item-scale" href={"/content/"+item.slug}>
 
                   <img className="card-img-top" src={item.acf.featuredImage.sizes.large} alt="Card image cap" style={{
                     width: "100%",
@@ -34,7 +34,7 @@ class Card extends Component {
                     <h5 className="card-title mb-1 text-left font-bold">{Parser(item.title.rendered)}</h5>
                     <div className="row w-100 mx-auto text-muted">
                       <small className="mr-auto">{date}</small>
-                      <small className="ml-auto text-capitalize">{Parser(item.type)}</small>
+                      {/* <small className="ml-auto text-capitalize">{Parser(item.acf.postType.join(" ") || "Post")}</small> */}
                     </div>
                     {/* {Parser(item.date)} */}
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}

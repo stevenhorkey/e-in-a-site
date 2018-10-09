@@ -3,7 +3,7 @@ import API from '../../utils/API';
 
 import ComponentIndex from '../../components/components';
 
-class Blog extends Component {
+class Content extends Component {
   state = {
     // loading: true,
     posts: [],
@@ -34,8 +34,8 @@ class Blog extends Component {
                     headImage={page._embedded['wp:featuredmedia']['0'].source_url}
                     >
                         <h1 className="mx-auto text-uppercase">{page.title.rendered}</h1>
-                    </ComponentIndex.Header> */}
-        <ComponentIndex.Meta page={page} />
+                    </ComponentIndex.Header>
+        <ComponentIndex.Meta page={page} /> */}
         <ComponentIndex.Section sectionName={page.title.rendered}>
           <div className="text-center pt-4">
             <div className="row">
@@ -57,4 +57,4 @@ class Blog extends Component {
   }
 }
 
-export default Blog;
+export default Content;

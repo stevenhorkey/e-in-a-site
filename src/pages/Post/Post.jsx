@@ -43,6 +43,7 @@ class Post extends Component {
       );
     else {
       let post = this.state.post;
+      console.log(post);
       let date = post.date.substring(0, 10);
       let modified = post.modified.substring(0, 10);
       return (
@@ -52,10 +53,23 @@ class Post extends Component {
           />
 
           <ComponentIndex.Header headImage={post.acf.featuredImage.url}>
-            <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
-              {Parser(post.title.rendered)}
-            </h1>
+            <div className="row w-100 mx-auto">
+              <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
+                {Parser(post.title.rendered)}
+              </h1>
+            </div>
+            <br/>
+            {!post.acf.pinecastId ? null : (
+              <div className="pinecast-player">
+                {Parser(
+                  '<iframe src="https://pinecast.com/player/' +
+                    post.acf.pinecastId +
+                    '?theme=minimal" seamless height="60" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>'
+                )}
+              </div>
+            )}
           </ComponentIndex.Header>
+          {post.content.rendered === "" ? null : 
           <article id={post.slug} className="post-section bg-light py-3">
             <div className="container text-center mb-5">
               <div className="row">
@@ -71,15 +85,7 @@ class Post extends Component {
               </div>
               <hr />
               <div className="text-justify written-copy">
-                {!post.acf.pinecastId ? null : (
-                  <div className="mb-5">
-                    {Parser(
-                      '<iframe src="https://pinecast.com/player/' +
-                        post.acf.pinecastId +
-                        '?theme=thick" seamless height="200" style="border:0" class="pinecast-embed" frameborder="0" width="100%"></iframe>'
-                    )}
-                  </div>
-                )}
+                
                 {Parser(post.content.rendered)}
               </div>
               <img
@@ -98,7 +104,7 @@ class Post extends Component {
                   </small>
               </div>
             </div>
-          </article>
+          </article>}
         </Fragment>
       );
     }

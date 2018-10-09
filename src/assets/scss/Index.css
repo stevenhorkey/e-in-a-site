@@ -5,7 +5,7 @@
   background-color: #000000;
   text-transform: uppercase;
   transition: ease-in-out 200ms;
-  border-bottom: white 1px solid; }
+  border-bottom: white 2px solid; }
   #mainNav .nav-container {
     max-width: 2000px; }
   #mainNav .navbar-toggler {
@@ -283,6 +283,13 @@ a {
   margin: 4rem auto; }
   .written-copy p, .written-copy h2 {
     margin-bottom: 3rem; }
+
+.pinecast-player {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  min-width: 65%;
+  transform: translate(-50%); }
 
 #headshot {
   border-radius: 50%;

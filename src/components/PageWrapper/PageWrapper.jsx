@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import LoadingScreen from 'react-loading-screen';
-
+import Parser from 'html-react-parser';
 import loadingImg from '../../assets/img/loading.gif';
 import ComponentIndex from '../../components/components';
 import SEOHelmet from '../SEOHelmet/SEOHelmet';
@@ -40,7 +40,7 @@ class PageWrapper extends Component {
             {!page.acf.standardHeader ? null : (
               <ComponentIndex.Header headImage={page.acf.featuredImage.url}>
                 <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
-                  {page.title.rendered}
+                  {Parser(page.title.rendered)}
                 </h1>
               </ComponentIndex.Header>
             )}

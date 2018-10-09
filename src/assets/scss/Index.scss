@@ -75,6 +75,15 @@ a {
   }
 }
 
+.pinecast-player{
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  min-width: 65%;
+  transform: translate(-50%);
+  
+}
+
 #headshot{
   border-radius: 50%;
   border: 1px solid $gray-200;

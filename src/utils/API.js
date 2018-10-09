@@ -3,7 +3,8 @@ var md5 = require('md5');
 
 // All api routes are defined here centrally for ease of use.
 // const url = 'https://api.memeandmeaning.com/wp-json/wp/v2/';
-const url = 'https://api.memeandmeaning.com/wp-json/wp/v2/';
+// const url = 'https://api.memeandmeaning.com/wp-json/wp/v2/';
+const url = 'http://54.202.248.102/wp-json/wp/v2/';
 const mcListId = 'd25ec94b8f';
 
 

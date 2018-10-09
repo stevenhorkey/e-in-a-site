@@ -51,7 +51,10 @@ class Home extends Component {
             </div> */}
           </ComponentIndex.Header>
           
-          <section className="bg-black text-white">
+          <section className="bg-black text-white" style={{
+            border: "2px solid white",
+            borderWidth: "2px 0"
+          }}>
             <div className="container text-center ">
               <div className="row d-flex align-items-center">
                 <div className='col-md-6 py-5'>
@@ -65,7 +68,7 @@ class Home extends Component {
                         <div className="col-md-9 font-italic">
                           <div>
                             <span>MEME : </span>
-                            <span>an idea - especially in the sense of viral socio-cultural spreading and transmission.</span>
+                            <span>An understanding in reference to the evolution of ideas across culture and time.</span>
                           </div>
                           <br/>
                           <div>
@@ -77,11 +80,16 @@ class Home extends Component {
                       </div>
                       <div className="row">
                         <div className="col-12 text-justify">
-                          <div>My name is Steven Horkey and Meme and Meaning is a project of mine where I seek to learn, understand, and embody a live well lived.</div>
+                          <div>My name is Steven Horkey and Meme and Meaning is a project of mine where I seek to learn, understand, and embody a life well lived.</div>
                           <br/>
-                          <div>My mission is to self-actualize and do something of lasting significance and value while I'm here. Frankly, I think you should do the same, for the sake of us all.</div>
+                          <div>This is about approaching our time here in a more sincere way, one that is grounded in humility and honest connection amidst our shared human condition.
                           </div>
-                          <a href="/about" className="mx-auto text-uppercase btn btn-primary py-2 my-3 scale-item d-flex align-items-center" >Learn More</a>
+                          <br/>
+                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to ones self, and it is my mission for you to do the same</div>
+                          {/* <br/> */}
+                          <div class="font-italic text-center">In the most loving and transparent sense, simply live.</div>
+                          </div>
+                          {/* <a href="/about" className="mx-auto text-uppercase btn btn-primary py-2 my-3 scale-item d-flex align-items-center" >Learn More</a> */}
                         
                       </div>
                     </div>
@@ -113,7 +121,7 @@ class Home extends Component {
             <div className="container text-center">
               <div className='row w-100 m-auto'>
                 <h2 className="mr-auto text-uppercase font-weight-bold pt-1 mb-0">Recent Posts</h2>
-                <a href="/blog" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
+                <a href="/content" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
               </div>
               <div className="row mt-3">
                 {posts.map((post,key) => {

@@ -45,11 +45,11 @@ class Navbar extends Component {
               </button>
               <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav ml-auto">
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/about">
                       About
                     </a>
-                  </li>
+                  </li> */}
                   {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/music">Music</a>
                   </li>
@@ -57,15 +57,15 @@ class Navbar extends Component {
                       <a className="nav-link js-scroll-trigger" href="/downloads">Downloads</a>
                   </li> */}
                   <li className="nav-item">
-                    <a className="nav-link js-scroll-trigger" href="/blog">
-                      Blog
+                    <a className="nav-link js-scroll-trigger" href="/content">
+                      Content
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/podcast">
                       Podcast
                     </a>
-                  </li>
+                  </li> */}
                   {/* <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/#contact">
                       Contact
