@@ -82,7 +82,7 @@
     font-size: 2.5rem;
     line-height: 2.5rem;
     letter-spacing: 0.8rem;
-    background: -webkit-linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.15));
+    background: -webkit-linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.5));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text; }
   .masthead #not-found {

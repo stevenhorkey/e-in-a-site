@@ -39,15 +39,17 @@ class Content extends Component {
         <ComponentIndex.Section sectionName={page.title.rendered}>
           <div className="text-center pt-4">
             <div className="row">
-              {posts.map((post, key) => {
-                return (
-                  <Fragment key={key}>
-                    <ComponentIndex.Card
-                      item={post}
-                    />
-                  </Fragment>
-                );
-              })}
+              {/* <div className=""> */}
+                {posts.map((post, key) => {
+                  return (
+                    <Fragment key={key}>
+                      <ComponentIndex.Card
+                        item={post}
+                      />
+                    </Fragment>
+                  );
+                })}
+              {/* </div> */}
             </div>
           </div>
         </ComponentIndex.Section>
