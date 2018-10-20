@@ -32,7 +32,7 @@ class Card extends Component {
                     <h5 className="card-title mb-1 text-left font-bold">{Parser(item.title.rendered)}</h5>
                     <div className="row w-100 mx-auto text-muted">
                       <small className="mr-auto">{date}</small>
-                      <small className="ml-auto text-capitalize">{Parser(item.acf.postType.join(" ") || "Post")}</small>
+                      <small className="ml-auto text-capitalize">{Parser(item.acf.postType.join(", ") || "Post")}</small>
                     </div>
                     {/* {Parser(item.date)} */}
                     {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}

@@ -281,8 +281,9 @@ a {
 .written-copy {
   max-width: 780px;
   margin: 4rem auto; }
-  .written-copy p, .written-copy h2 {
-    margin-bottom: 3rem; }
+  .written-copy p, .written-copy h2, .written-copy ul, .written-copy li {
+    margin-bottom: 3rem;
+    font-size: 18px; }
 
 .pinecast-player {
   position: absolute;

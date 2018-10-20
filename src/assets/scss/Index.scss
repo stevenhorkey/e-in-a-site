@@ -70,8 +70,9 @@ a {
 .written-copy {
   max-width: 780px;
   margin: 4rem auto;
-  p, h2 {
+  p, h2, ul, li {
     margin-bottom: 3rem;
+    font-size: 18px;
   }
 }
 
