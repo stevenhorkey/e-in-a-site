@@ -20,7 +20,7 @@ class SEOHelmet extends Component {
 
             <meta name="twitter:card" value={item.yoast_meta.yoast_wpseo_metadesc}></meta>
 
-            <meta property="og:site_name" content="Meme and Meaning" />
+            <meta property="og:site_name" content="Everything In All" />
             <meta property="og:title" content={item.yoast_meta.yoast_wpseo_title} />
             <meta property="og:type" content={"article"} />
             <meta property="og:url" content={window.location.href} />

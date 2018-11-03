@@ -52,18 +52,18 @@ class Navbar extends Component {
                   </li> */}
                   {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/music">Music</a>
-                  </li>
-                  <li className="nav-item">
-                      <a className="nav-link js-scroll-trigger" href="/downloads">Downloads</a>
                   </li> */}
+                  <li className="nav-item">
+                      <a className="nav-link js-scroll-trigger" href="/music">Music</a>
+                  </li>
                   <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/content/start">
                       Start Here
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link js-scroll-trigger" href="/content">
-                      Content
+                    <a className="nav-link js-scroll-trigger" href="/posts">
+                      Blog & Podcast
                     </a>
                   </li>
                   {/* <li className="nav-item">

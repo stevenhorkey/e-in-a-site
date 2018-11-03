@@ -2,10 +2,10 @@ import React, { Component, Fragment } from 'react';
 import Parser from 'html-react-parser';
 import PropTypes from 'prop-types';
 import API from '../../utils/API';
-
+import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
 import logo from '../../assets/img/mmlogo.png';
-import steven from '../../assets/img/steven.JPG';
+import steven from '../../assets/img/steve.jpg';
 class Home extends Component {
   state = {
     loading: false,
@@ -33,18 +33,23 @@ class Home extends Component {
       // console.log(posts);
       return (
         <Fragment>
-          <ComponentIndex.Header headImage={page.acf.featuredImage.url}>
+          {/* <ComponentIndex.Header headImage={page.acf.featuredImage.url}> */}
+          <ComponentIndex.Header headImage={eina}>
             <div className="mx-auto text-center">
-              <img
+              {/* <img
                 src={logo}
                 className=""
                 data-aos="zoom-out-down"
                 alt="mm-logo"
-              />
-              <p className="text-white-50 mx-auto mt-4 mb-5">
-                {Parser(page.acf.header1)}
+              /> */}
+              <h1 className="text-uppercase display-1">Everything In All</h1>
+              <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
+                MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY
               </p>
-              <h1 className="text-uppercase display-1" data-aos="zoom-out-down">{Parser(page.acf.header2)}</h1>
+              {/* <p className="text-white-50 mx-auto mt-4 mb-5">
+                {Parser(page.acf.header1)}
+              </p> */}
+              <h1 className="text-uppercase display-3" data-aos="zoom-out-down">{Parser(page.acf.header2)}</h1>
             </div>
             {/* <div className="col-md-6">
 
@@ -62,11 +67,13 @@ class Home extends Component {
                     <h2 className="text-uppercase">Welcome</h2>
                     <div className="text-left ">
                       <div className="row py-4 d-flex align-items-center">
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                           <img className="my-3" id="headshot" src={steven}/>
                         </div>
-                        <div className="col-md-9 font-italic">
-                          <div>
+                        <div className="col-md-8">
+                        <div>“The true philosopher and the true poet are one, and a beauty, which is truth, and a truth, which is beauty, is the aim of both.”
+</div>
+                          {/* <div>
                             <span>MEME : </span>
                             <span>An understanding in reference to the evolution of ideas across culture and time.</span>
                           </div>
@@ -74,13 +81,13 @@ class Home extends Component {
                           <div>
                             <span>MEANING : </span>
                             <span>the essence of what is attempting to be conveyed; a motivating reason to carry the weight of life's suffering.</span>
-                          </div>
+                          </div> */}
                       </div>
                         
                       </div>
                       <div className="row">
                         <div className="col-12 text-justify">
-                          <div>My name is Steven Horkey and Meme and Meaning is a project of mine where I seek to learn, understand, and embody a life well lived.</div>
+                          <div>My name is Steven Horkey and Everything In All is a project of mine where I seek to learn, understand, and embody a life well lived.</div>
                           <br/>
                           <div>This is about approaching our time here in a more sincere way, one that is grounded in humility and honest connection amidst our shared human condition.
                           </div>
@@ -121,7 +128,7 @@ class Home extends Component {
             <div className="container text-center">
               <div className='row w-100 m-auto'>
                 <h2 className="mr-auto text-uppercase font-weight-bold pt-1 mb-0">Recent Posts</h2>
-                <a href="/content" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
+                <a href="/posts" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
               </div>
               <div className="row mt-3">
                 {posts.map((post,key) => {

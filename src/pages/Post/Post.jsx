@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import API from '../../utils/API';
 import Parser from 'html-react-parser';
 import LoadingScreen from 'react-loading-screen';
-
+import $ from 'jquery';
 import loadingImg from '../../assets/img/loading.gif';
 import ComponentIndex from '../../components/components';
 import signature from '../../assets/img/signiture.png';
@@ -21,6 +21,13 @@ class Post extends Component {
           post,
           loading: false,
         });
+
+        $(".form-post").children().after("<textarea class='post-form-ta'/>");
+        $(".form-post").after("<p class='mx-auto text-center p-2 my-3'>I do not save or see any of these results or answers. If you don't send or download them now, you loose them forever.</p>");
+        $(".form-post").after("<button class='mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center'>Email me my results</button>")
+        $(".form-post").after("<button class='mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center'>Download My Results</button>")
+
+
       })
       .catch(err => {
         console.log(err);

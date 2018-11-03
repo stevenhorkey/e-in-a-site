@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   site = {
-    name: 'Meme and Meaning',
+    name: 'Everything In All',
   };
 
   componentDidMount = () => {

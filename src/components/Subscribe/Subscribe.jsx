@@ -62,11 +62,11 @@ class Mailchimp extends Component {
             
             <div className="row d-flex align-items-center">
               <span className="col-7 text-justify">
-              <h2 className="display-4 text-uppercase text-primary newsletter-header">Free Updates and Bonuses</h2>
+              <h2 className="display-4 text-uppercase text-primary newsletter-header">Free Updates & Music</h2>
               
               </span>
               <img className="col-5" src={emailLead} />
-              <div className="my-4">Signup for the free Meme and Meaning newsletter and recieve a free downloadable pdf of my Top 22 Questions for Self Reflection.</div> 
+              <div className="my-4">Signup for the free Everything In All newsletter and recieve a free downloadable pdf of my Top 22 Questions for Self Reflection.</div> 
             </div>
 
             <form className="row d-block text-left" onSubmit={this.handleSubmit.bind(this)}>
@@ -90,7 +90,8 @@ class Mailchimp extends Component {
                 {status === "error" && <p style={styles.errorMsg}>{messages.error}</p>}
               </div>
               <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center" type="submit" value="Get my downloads"/>
-              <small className="text-muted text-center d-block">No spam ever</small>
+              <small className="text-muted text-center d-block">I hate too many emails too. <br/>You may unsubscribe at any time and won't receive more than one per week.<br/>No spam ever.</small>
+              <small className="text-muted text-center d-block"></small>
             </form>
           </div>
         </Fragment>

@@ -3,7 +3,7 @@ import API from '../../utils/API';
 
 import ComponentIndex from '../../components/components';
 
-class Content extends Component {
+class Posts extends Component {
   state = {
     // loading: true,
     posts: [],
@@ -59,4 +59,4 @@ class Content extends Component {
   }
 }
 
-export default Content;
+export default Posts;
