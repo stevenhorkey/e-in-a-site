@@ -310,15 +310,19 @@ input {
 input:focus {
   border: 1px solid #88a4ac; }
 
-.form-post li {
-  margin: 1rem 0; }
-
-.form-post textarea {
-  width: 100%;
-  border-radius: 3px;
-  margin-bottom: 2rem;
-  height: 100px;
-  padding: 5px; }
+.form-post {
+  padding: 0;
+  margin-bottom: 0rem !important; }
+  .form-post li {
+    margin: 1rem 0;
+    list-style: none;
+    text-align: center; }
+  .form-post textarea {
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    height: 100px;
+    padding: 5px; }
 
 footer {
   padding: 5rem 0; }

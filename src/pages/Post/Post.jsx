@@ -7,26 +7,32 @@ import loadingImg from '../../assets/img/loading.gif';
 import ComponentIndex from '../../components/components';
 import signature from '../../assets/img/signiture.png';
 import SEOHelmet from '../../components/SEOHelmet/SEOHelmet';
+import pdfMake from "pdfmake/build/pdfmake";
+import pdfFonts from "pdfmake/build/vfs_fonts";
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 class Post extends Component {
   state = {
     loading: true,
     post: {},
+    hasForm: false
   };
 
   componentDidMount = () => {
     API.getPost(this.props.match.params.id)
       .then(res => {
         let post = res.data[0];
+
         this.setState({
           post,
           loading: false,
         });
 
-        $(".form-post").children().after("<textarea class='post-form-ta'/>");
-        $(".form-post").after("<p class='mx-auto text-center p-2 my-3'>I do not save or see any of these results or answers. If you don't send or download them now, you loose them forever.</p>");
-        $(".form-post").after("<button class='mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center'>Email me my results</button>")
-        $(".form-post").after("<button class='mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center'>Download My Results</button>")
-
+        if ($(".form-post")){
+          this.setState({
+            hasForm: true
+          })
+        }
 
       })
       .catch(err => {
@@ -40,6 +46,139 @@ class Post extends Component {
 
     document.body.appendChild(script);
   };
+
+  renderWorksheetForm = () => {
+    $(".form-post").children().after("<textarea class='post-form-ta'/>");
+
+    return (
+      <Fragment>
+        <div className="container">
+          <div className="row">
+            <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download Your Work as a PDF</button>
+            {/* <button className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-sm-6'>Email me my results</button> */}
+          </div>
+        </div>
+        <div className="row">
+          <small className='mx-auto text-center p-2 my-3'>I do not save or see any of these answers. If you don't download them before closing this page, you'll loose them forever.</small>
+        </div>
+      </Fragment>
+    );
+  }
+
+  createPDF = () => {
+
+    const title = this.state.post.title.rendered.trim();
+    const exerciseDescription = this.state.post.acf.exerciseDescription;
+    const questions = []
+    const answers = []
+    $('.form-post').children('li').each(function() {
+      questions.push($(this).text().trim());
+    });
+    $('.form-post').children('textarea').each(function() {
+      answers.push($(this).val().trim());
+    });
+
+    console.log(title,exerciseDescription);
+    console.log(answers);
+
+    let doc = {
+      footer: { 
+        text: "Everything In All - " + title,
+        style: "footer"
+      },
+      content: [
+        {
+          text: 'EVERYTHING IN ALL',
+          style: 'brand'
+        },
+        {
+          text: title,
+          style: 'title'
+        },
+        {
+          text: exerciseDescription,
+          style: 'description'
+        },
+        
+      ],
+      styles: {
+        brand: {
+          fontSize: 18,
+          bold: true,
+          alignment: 'center',
+          marginBottom: 32
+        },
+        title: {
+          fontSize: 16,
+          bold: true,
+          alignment: 'center',
+          marginBottom: 32
+        },
+        description: {
+          fontSize: 12,
+          bold: false,
+          alignment: 'justify',
+          marginBottom: 32
+        },
+        question: {
+          fontSize: 12,
+          italics: true,
+          marginBottom: 16,
+          bold: true
+        },
+        answer: {
+          fontSize: 12,
+          marginBottom: 32,
+          bold: false,
+          marginLeft: 20
+        },
+        footer: {
+          fontSize: 9,
+          // marginBottom: 32,
+          bold: false,
+          marginLeft: 36,
+          italics: true
+        }
+      }
+      
+    }
+
+    for(let i = 0; i < questions.length; i++){
+      doc.content.push(
+        {
+        text: (i+1).toString() + '. ' + questions[i],
+        style: 'question'
+        },
+        {
+        text: answers[i],
+        style: 'answer'
+        }
+      )
+    }
+
+    const filename = title.replace(/ /g, '-').toLowerCase();
+
+    pdfMake.createPdf(doc).download(filename);
+   
+  }
+
+  // sendPDF = () => {
+    // const doc = new jsPDF();
+
+    // doc.text('Hello world!', 10, 10)
+
+    // const pdfFile = doc.output('blob')
+    // console.log(pdfFile);
+
+    // API.sendFile("slug", doc)
+    //     .then(res => {
+    //       console.log(res);
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     })
+    // doc.save('a4.pdf')
+  // }
 
   render() {
     if (this.state.loading)
@@ -78,7 +217,7 @@ class Post extends Component {
           </ComponentIndex.Header>
           {post.content.rendered === "" ? null : 
           <article id={post.slug} className="post-section bg-light py-3">
-            <div className="container text-center mb-5">
+            <div className="container text-center">
               <div className="row">
                 <small className="font-italic col-sm-6 text-left">
                   {Parser(post.title.rendered)}
@@ -92,8 +231,9 @@ class Post extends Component {
               </div>
               <hr />
               <div className="text-justify written-copy">
-                
                 {Parser(post.content.rendered)}
+                {/* {this.renderWorksheetForm} */}
+                {this.state.hasForm ? this.renderWorksheetForm() : null}
               </div>
               <img
                 className="mx-auto mb-3"

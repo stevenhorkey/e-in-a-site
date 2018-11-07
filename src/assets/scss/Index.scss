@@ -109,8 +109,12 @@ input:focus{
 }
 
 .form-post{
+  padding: 0;
+  margin-bottom: 0rem !important;
   li {
     margin: 1rem 0;
+    list-style: none;
+    text-align: center;
   }
   textarea {
     width: 100%;

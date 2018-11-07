@@ -43,12 +43,12 @@ class Home extends Component {
                 alt="mm-logo"
               /> */}
               <h1 className="text-uppercase display-1">Everything In All</h1>
-              <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
-                MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY
-              </p>
-              {/* <p className="text-white-50 mx-auto mt-4 mb-5">
+              {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
+                {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
+              {/* </p> */}
+              <p className="text-white-50 mx-auto mt-4 mb-5">
                 {Parser(page.acf.header1)}
-              </p> */}
+              </p>
               <h1 className="text-uppercase display-3" data-aos="zoom-out-down">{Parser(page.acf.header2)}</h1>
             </div>
             {/* <div className="col-md-6">
@@ -71,7 +71,7 @@ class Home extends Component {
                           <img className="my-3" id="headshot" src={steven}/>
                         </div>
                         <div className="col-md-8">
-                        <div>“The true philosopher and the true poet are one, and a beauty, which is truth, and a truth, which is beauty, is the aim of both.”
+                        <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.
 </div>
                           {/* <div>
                             <span>MEME : </span>
@@ -87,14 +87,22 @@ class Home extends Component {
                       </div>
                       <div className="row">
                         <div className="col-12 text-justify">
-                          <div>My name is Steven Horkey and Everything In All is a project of mine where I seek to learn, understand, and embody a life well lived.</div>
+                          {/* <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.</div>
+                          <br/> */}
+                          <div>I likely don't know anything that you don't already know yourself, but I do have an earnest desire to be a decent person and be part of the general solution instead of the general problem. </div>
                           <br/>
-                          <div>This is about approaching our time here in a more sincere way, one that is grounded in humility and honest connection amidst our shared human condition.
+                          <div>I don't want your money. I don't want your attention. I don't want anything from you except a commitment that you will think for yourself, take ownership for the quality of your life, and remain open. If this site and music helps you do that, then consider it a resource. If not, then please go find something that does.
+                          </div>
+                          <br/>                          
+                          <div>
+                          This is about approaching our time here in a more sincere way, one that is grounded in humility and an honest connection amidst our shared human condition.
                           </div>
                           <br/>
-                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to ones self, and it is my mission for you to do the same</div>
+                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self and this life we are all a part of. What about you?</div>
                           {/* <br/> */}
-                          <div class="font-italic text-center">In the most loving and transparent sense, simply live.</div>
+                          <br/>
+
+                          <div className="text-center">In the most loving and transparent sense, <span className="font-italic">live better.</span></div>
                           </div>
                           {/* <a href="/about" className="mx-auto text-uppercase btn btn-primary py-2 my-3 scale-item d-flex align-items-center" >Learn More</a> */}
                         
