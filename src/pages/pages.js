@@ -5,10 +5,12 @@ import Posts from './Posts/Posts';
 import Podcast from './Podcast/Podcast';
 import Downloads from './Downloads/Downloads';
 import NotFound from './NotFound/NotFound';
+import Music from './Music/Music';
 
 const PageIndex = {
   Home,
   Post,
+  Music,
   About,
   NotFound,
   Posts,

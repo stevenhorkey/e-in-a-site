@@ -61,12 +61,12 @@ class Mailchimp extends Component {
           <div className="container">
             
             <div className="row d-flex align-items-center">
-              <span className="col-7 text-justify">
+              <span className="col-12 text-justify">
               <h2 className="display-4 text-uppercase text-primary newsletter-header">Free Updates, Music, & Exercises</h2>
               
               </span>
-              <img className="col-5" src={emailLead} />
-              <div className="my-4">Signup for the free Everything In All newsletter and recieve a free downloadable pdf of my Top 22 Questions for Self Reflection.</div> 
+              {/* <img className="col-5" src={emailLead} /> */}
+              <div className="my-4">Sign up for the free Everything In All newsletter and receive a free downloadable pdf of my Top 22 Questions for Self Reflection, as well as updates as to when new music and exercises are released.</div> 
             </div>
 
             <form className="row d-block text-left" onSubmit={this.handleSubmit.bind(this)}>
@@ -89,7 +89,7 @@ class Mailchimp extends Component {
                 {status === "empty" && <p style={styles.errorMsg}>{messages.empty}</p>}
                 {status === "error" && <p style={styles.errorMsg}>{messages.error}</p>}
               </div>
-              <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center" type="submit" value="Get my downloads"/>
+              <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center" type="submit" value="Sign Me Up"/>
               <small className="text-muted text-center d-block">Like you, I hate too many emails. <br/>You may unsubscribe at any time and won't receive more than one per week.<br/>Spam is out of the question.</small>
               <small className="text-muted text-center d-block"></small>
             </form>

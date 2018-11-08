@@ -28,7 +28,8 @@ class Post extends Component {
           loading: false,
         });
 
-        if ($(".form-post")){
+        if ($(".form-post").length){
+          console.log('how')
           this.setState({
             hasForm: true
           })
@@ -230,7 +231,16 @@ class Post extends Component {
                 
               </div>
               <hr />
+              
               <div className="text-justify written-copy">
+                {!this.state.hasForm ? null : 
+                  <div className="container mb-4">
+                    <div className="row">
+                      <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'><h2 className='ws-normal my-0'>Download the Worksheet as a PDF</h2></button>
+                      <h2 className="text-uppercase font-weight-bold mx-auto my-2">Or Complete Your Work Below</h2>
+                    </div>
+                  </div>
+                }
                 {Parser(post.content.rendered)}
                 {/* {this.renderWorksheetForm} */}
                 {this.state.hasForm ? this.renderWorksheetForm() : null}

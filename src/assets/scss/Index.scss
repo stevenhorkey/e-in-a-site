@@ -108,6 +108,10 @@ input:focus{
   border: 1px solid $primary;
 }
 
+.ws-normal{
+  white-space: normal;
+}
+
 .form-post{
   padding: 0;
   margin-bottom: 0rem !important;
@@ -132,4 +136,20 @@ footer {
 
 .at-custom-sidebar{
   z-index: 1 !important;
+}
+
+// #recent-posts{
+//       margin: inherit auto 12px auto;
+//     }
+//     #view-all-posts{
+//        margin: inherit auto 12px auto;
+//     }
+
+@media only screen and (max-width: 456px) {
+    #recent-posts{
+      margin: 0 auto;
+    }
+    #view-all-posts{
+       margin: 20px auto 0px auto;
+    }
 }

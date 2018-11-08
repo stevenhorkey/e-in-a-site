@@ -6,7 +6,7 @@ import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
 import logo from '../../assets/img/mmlogo.png';
 import steven from '../../assets/img/steve.jpg';
-class Home extends Component {
+class Music extends Component {
   state = {
     loading: false,
     posts: [],
@@ -46,10 +46,10 @@ class Home extends Component {
               {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
                 {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
               {/* </p> */}
-              <h4 className="text-white-50 mx-auto my-4 text-uppercase">
+              <p className="text-white-50 mx-auto mt-4 mb-5">
                 {Parser(page.acf.header1)}
-              </h4>
-              <p className="text-white-50 mx-auto mt-4 mb-5" data-aos="zoom-out-down">{Parser(page.acf.header2)}</p>
+              </p>
+              <h1 className="text-uppercase display-3" data-aos="zoom-out-down">{Parser(page.acf.header2)}</h1>
             </div>
             {/* <div className="col-md-6">
 
@@ -67,12 +67,12 @@ class Home extends Component {
                     <h2 className="text-uppercase">Welcome</h2>
                     <div className="text-left ">
                       <div className="row py-4 d-flex align-items-center">
-                        {/* <div className="col-md-4">
+                        <div className="col-md-4">
                           <img className="my-3" id="headshot" src={steven}/>
-                        </div> */}
-                        <div className="col-md-12">
-                        <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.
                         </div>
+                        <div className="col-md-8">
+                        <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.
+</div>
                           {/* <div>
                             <span>MEME : </span>
                             <span>An understanding in reference to the evolution of ideas across culture and time.</span>
@@ -98,7 +98,7 @@ class Home extends Component {
                           This is about approaching our time here in a more sincere way, one that is grounded in humility and an honest connection amidst our shared human condition.
                           </div>
                           <br/>
-                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self and this life we are all a part of.</div>
+                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self and this life we are all a part of. What about you?</div>
                           {/* <br/> */}
                           <br/>
 
@@ -135,8 +135,8 @@ class Home extends Component {
           <section className="bg-white py-5">
             <div className="container text-center">
               <div className='row w-100 m-auto'>
-                <h2 id='recent-posts' className="mr-auto text-uppercase font-weight-bold mb-0">Recent Posts</h2>
-                <a href="/posts" id='view-all-posts' className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
+                <h2 className="mr-auto text-uppercase font-weight-bold pt-1 mb-0">Recent Posts</h2>
+                <a href="/posts" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
               </div>
               <div className="row mt-3">
                 {posts.map((post,key) => {
@@ -185,8 +185,8 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+Music.propTypes = {
   home: PropTypes.object,
 };
 
-export default Home;
+export default Music;
