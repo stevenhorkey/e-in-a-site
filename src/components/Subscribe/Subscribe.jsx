@@ -22,7 +22,7 @@ class Mailchimp extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const action = 'https://memeandmeaning.us16.list-manage.com/subscribe/post?u=4c73c4e387b1f2b219c1f2af6&amp;id=d25ec94b8f';
+    const action = 'https://everythinginall.us19.list-manage.com/subscribe/post?u=2e4399095ea5df2270bd7647d&amp;id=2ee3c1c90f';
     let fname = `${"FNAME"}=${encodeURIComponent(this.state["FNAME"])}`;
     let lname = `${"LNAME"}=${encodeURIComponent(this.state["LNAME"])}`;
     let em = `${"EMAIL"}=${encodeURIComponent(this.state["EMAIL"])}`;

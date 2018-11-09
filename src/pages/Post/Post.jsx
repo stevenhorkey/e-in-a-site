@@ -220,10 +220,10 @@ class Post extends Component {
           <article id={post.slug} className="post-section bg-light py-3">
             <div className="container text-center">
               <div className="row">
-                <small className="font-italic col-sm-6 text-left">
+                <small className="center-md font-italic col-sm-6 text-left">
                   {Parser(post.title.rendered)}
                 </small>
-                <small className="font-italic col-sm-6 text-right">
+                <small className="center-md font-italic col-sm-6 text-right">
                   Published on {date}{' '}
                   {date !== modified ? 'and updated on ' + modified : null}
                 </small>
@@ -236,8 +236,8 @@ class Post extends Component {
                 {!this.state.hasForm ? null : 
                   <div className="container mb-4">
                     <div className="row">
-                      <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'><h2 className='ws-normal my-0'>Download the Worksheet as a PDF</h2></button>
-                      <h2 className="text-uppercase font-weight-bold mx-auto my-2">Or Complete Your Work Below</h2>
+                      <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download the Worksheet as a PDF</button>
+                      <h2 className="text-uppercase font-weight-bold mx-auto my-2 text-center">Or Complete Your Work Below</h2>
                     </div>
                   </div>
                 }
@@ -253,10 +253,10 @@ class Post extends Component {
               />
               <hr/>
               <div className="row">
-                  <small className="font-italic col-sm-6 text-left">
+                  <small className="center-md font-italic col-sm-6 text-left">
                     {Parser(post.title.rendered)}
                   </small>
-                  <small className="font-italic col-sm-6 text-right">
+                  <small className="center-md font-italic col-sm-6 text-right">
                     Image by {post.acf.imageAuthor}
                   </small>
               </div>

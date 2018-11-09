@@ -53,9 +53,9 @@ class Navbar extends Component {
                   {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/music">Music</a>
                   </li> */}
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                       <a className="nav-link js-scroll-trigger" href="/music">Music</a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/content/start">
                       Start Here
@@ -64,6 +64,11 @@ class Navbar extends Component {
                   <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/posts">
                       Blog & Podcast
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link js-scroll-trigger" target="_blank" href="https://www.facebook.com/everythinginall/">
+                      <i class="fab fa-facebook-f"></i>
                     </a>
                   </li>
                   {/* <li className="nav-item">

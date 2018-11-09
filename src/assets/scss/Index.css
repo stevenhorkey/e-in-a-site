@@ -279,7 +279,7 @@ a {
 
 .written-copy {
   max-width: 780px;
-  margin: 4rem auto; }
+  margin: 1rem auto; }
   .written-copy p, .written-copy h2, .written-copy ul, .written-copy li {
     margin-bottom: 3rem;
     font-size: 18px; }
@@ -327,14 +327,27 @@ input:focus {
     height: 100px;
     padding: 5px; }
 
+.btn {
+  white-space: normal;
+  z-index: 0; }
+
 footer {
   padding: 5rem 0; }
 
 .at-custom-sidebar {
   z-index: 1 !important; }
 
+@media only screen and (max-width: 768px) {
+  .newsletter-header {
+    font-size: 8vw; }
+  .center-md {
+    text-align: center !important;
+    margin-bottom: 3px; } }
+
 @media only screen and (max-width: 456px) {
   #recent-posts {
     margin: 0 auto; }
   #view-all-posts {
-    margin: 20px auto 0px auto; } }
+    margin: 20px auto 0px auto; }
+  .newsletter-header {
+    font-size: 16vw; } }

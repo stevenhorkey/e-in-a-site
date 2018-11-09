@@ -69,7 +69,7 @@ a {
 
 .written-copy {
   max-width: 780px;
-  margin: 4rem auto;
+  margin: 1rem auto;
   p, h2, ul, li {
     margin-bottom: 3rem;
     font-size: 18px;
@@ -129,6 +129,11 @@ input:focus{
   }
 }
 
+.btn{
+  white-space: normal;
+  z-index: 0;
+}
+
 
 footer {
   padding: 5rem 0;
@@ -138,18 +143,24 @@ footer {
   z-index: 1 !important;
 }
 
-// #recent-posts{
-//       margin: inherit auto 12px auto;
-//     }
-//     #view-all-posts{
-//        margin: inherit auto 12px auto;
-//     }
+@media only screen and (max-width: 768px) {
+    .newsletter-header{
+      font-size: 8vw;
+    }
+    .center-md{
+      text-align: center !important;
+      margin-bottom: 3px;
+    }
 
+}
 @media only screen and (max-width: 456px) {
     #recent-posts{
       margin: 0 auto;
     }
     #view-all-posts{
        margin: 20px auto 0px auto;
+    }
+    .newsletter-header{
+      font-size: 16vw;
     }
 }

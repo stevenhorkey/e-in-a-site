@@ -46,7 +46,7 @@ class Home extends Component {
               {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
                 {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
               {/* </p> */}
-              <h4 className="text-white-50 mx-auto my-4 text-uppercase">
+              <h4 className="text-white-50 mx-auto my-4 text-uppercase font-weight-light">
                 {Parser(page.acf.header1)}
               </h4>
               <p className="text-white-50 mx-auto mt-4 mb-5" data-aos="zoom-out-down">{Parser(page.acf.header2)}</p>
@@ -62,17 +62,16 @@ class Home extends Component {
           }}>
             <div className="container text-center ">
               <div className="row d-flex align-items-center">
-                <div className='col-md-6 py-5'>
+                <div className='col-md-6 order-md-1 order-2 py-5'>
                   <div className="container">
                     <h2 className="text-uppercase">Welcome</h2>
-                    <div className="text-left ">
-                      <div className="row py-4 d-flex align-items-center">
+                      {/* <div className="row py-4 d-flex align-items-center"> */}
                         {/* <div className="col-md-4">
                           <img className="my-3" id="headshot" src={steven}/>
                         </div> */}
-                        <div className="col-md-12">
+                        {/* <div className="col-md-12">
                         <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.
-                        </div>
+                        </div> */}
                           {/* <div>
                             <span>MEME : </span>
                             <span>An understanding in reference to the evolution of ideas across culture and time.</span>
@@ -82,13 +81,16 @@ class Home extends Component {
                             <span>MEANING : </span>
                             <span>the essence of what is attempting to be conveyed; a motivating reason to carry the weight of life's suffering.</span>
                           </div> */}
-                      </div>
+                      {/* </div>
                         
-                      </div>
-                      <div className="row">
+                      </div> */}
+                      <div className="row py-3">
                         <div className="col-12 text-justify">
                           {/* <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.</div>
                           <br/> */}
+                          <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.
+                          </div>
+                          <br/>
                           <div>I likely don't know anything that you don't already know yourself, but I do have an earnest desire to be a decent person and be part of the general solution instead of the general problem. </div>
                           <br/>
                           <div>I don't want your money. I don't want your attention. I don't want anything from you except a commitment that you will think for yourself, take ownership for the quality of your life, and remain open. If this site and music helps you do that, then consider it a resource. If not, then please go find something that does.
@@ -107,10 +109,9 @@ class Home extends Component {
                           {/* <a href="/about" className="mx-auto text-uppercase btn btn-primary py-2 my-3 scale-item d-flex align-items-center" >Learn More</a> */}
                         
                       </div>
-                    </div>
                   </div>
                 </div>
-                <div className="col-md-6 py-5">
+                <div className="col-md-6 order-1 order-md-12 py-5">
                   <ComponentIndex.Subscribe/>
                 </div>
               </div>
