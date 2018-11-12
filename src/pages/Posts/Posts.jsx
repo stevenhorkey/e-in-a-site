@@ -12,6 +12,7 @@ class Posts extends Component {
   componentDidMount = () => {
     API.getPosts(50)
       .then(res => {
+        // console.log(res);
         this.setState({
           posts: res.data,
           // loading: false
@@ -41,13 +42,15 @@ class Posts extends Component {
             <div className="row">
               {/* <div className=""> */}
                 {posts.map((post, key) => {
-                  return (
-                    <Fragment key={key}>
-                      <ComponentIndex.Card
-                        item={post}
-                      />
-                    </Fragment>
-                  );
+                  if(!post.acf.hidden){
+                    return (
+                      <Fragment key={key}>
+                        <ComponentIndex.Card
+                          item={post}
+                        />
+                      </Fragment>
+                    );
+                  }
                 })}
               {/* </div> */}
             </div>

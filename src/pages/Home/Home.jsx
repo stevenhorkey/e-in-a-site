@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import Parser from 'html-react-parser';
 import PropTypes from 'prop-types';
+import YouTube from 'react-youtube';
 import API from '../../utils/API';
 import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
 import logo from '../../assets/img/mmlogo.png';
 import steven from '../../assets/img/steve.jpg';
+
 class Home extends Component {
   state = {
     loading: false,
@@ -55,6 +57,14 @@ class Home extends Component {
 
             </div> */}
           </ComponentIndex.Header>
+
+          {/* <section className="vh-100">
+            <YouTube
+              videoId="uFeLFxW1vuM"
+              // opts={}
+              onReady={this._onReady}
+            />
+          </section> */}
           
           <section className="bg-black text-white" style={{
             border: "2px solid white",
@@ -141,11 +151,13 @@ class Home extends Component {
               </div>
               <div className="row mt-3">
                 {posts.map((post,key) => {
-                  return(
-                    <Fragment key={key}>
-                      <ComponentIndex.Card item={post}/>
-                    </Fragment>
-                  )
+                  if(!post.acf.hidden){
+                    return(
+                      <Fragment key={key}>
+                        <ComponentIndex.Card item={post}/>
+                      </Fragment>
+                    )
+                  }
                 })}
               </div>
             </div>

@@ -19,6 +19,7 @@ class Header extends Component {
                 this.props.headImage +
                 "')",
               minHeight: '100vh',
+              backgroundAttachment: 'fixed'
             }}
           >
             <div className="container h-100">
