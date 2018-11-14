@@ -14,7 +14,7 @@ class RightImageRow extends Component {
       let image = this.props.post.acf.featuredImage;
       return (
         <Fragment>
-          <a href={"/content/"+post.slug}>
+          <a href={"/"+post.slug}>
             <div
               className="row justify-content-center no-gutters scale-item"
               // data-aos="flip-up"

@@ -21,7 +21,7 @@ class Card extends Component {
         <Fragment>
           <div className="col-md-4 my-3">
               <div className="card scale-item">
-                <a className="item-scale" href={"/content/"+item.slug}>
+                <a className="item-scale" href={"/"+item.slug}>
 
                   <img className="card-img-top" src={item.acf.featuredImage.sizes.large} alt="Card image cap" style={{
                     width: "100%",

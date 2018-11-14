@@ -14,7 +14,7 @@ class LeftImageRow extends Component {
     if (!this.state.loading) {
       return (
         <Fragment>
-          <a href={"/content/"+post.slug}>
+          <a href={"/"+post.slug}>
             <div
               className="row justify-content-center no-gutters mb-5 mb-lg-0 scale-item"
               // data-aos="flip-up"
