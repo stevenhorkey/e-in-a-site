@@ -29,15 +29,17 @@ class Post extends Component {
         });
 
         if ($(".form-post").length){
-          console.log('how')
           this.setState({
             hasForm: true
           })
+          this.createInputs();
         }
 
       })
       .catch(err => {
         console.log(err);
+        // <Route component={PageIndex.NotFound} />
+        window.location.replace("/not-found");
       });
 
     const script = document.createElement("script");
@@ -47,6 +49,13 @@ class Post extends Component {
 
     document.body.appendChild(script);
   };
+
+  createInputs = () => {
+    $('.form-post li').each(function() {
+      var text = $(this).text();
+      $(this).html(text.replace('__input__', '<input type="text"/>')); 
+  });
+  }
 
   renderWorksheetForm = () => {
     $(".form-post").children().after("<textarea class='post-form-ta'/>");
@@ -72,15 +81,28 @@ class Post extends Component {
     const exerciseDescription = this.state.post.acf.exerciseDescription;
     const questions = []
     const answers = []
+    let date = new Date();
+        date.setHours(0, 0, 0, 0);
+        date = date.toDateString();
     $('.form-post').children('li').each(function() {
-      questions.push($(this).text().trim());
+      let question = $(this).html().trim();
+      // replace inputs with their values in the pdf
+      if(question.includes('<input')){
+        $(this).children('input').each(function() {
+          // console.log($(this).val());
+          let val = $(this).val();
+          if(!val) val = "____________________";
+          question = question.replace('<input type="text">',val);
+        })
+      }
+      // set temp div value to retrieve in order to remove html formating
+      question = $('#tempDiv').html(question).text();
+      // push question to questions list for pdfmake
+      questions.push(question);
     });
     $('.form-post').children('textarea').each(function() {
       answers.push($(this).val().trim());
     });
-
-    console.log(title,exerciseDescription);
-    console.log(answers);
 
     let doc = {
       footer: { 
@@ -91,6 +113,10 @@ class Post extends Component {
         {
           text: 'EVERYTHING IN ALL',
           style: 'brand'
+        },
+        {
+          text: date,
+          style: 'date'
         },
         {
           text: title,
@@ -107,7 +133,7 @@ class Post extends Component {
           fontSize: 18,
           bold: true,
           alignment: 'center',
-          marginBottom: 32
+          marginBottom: 16
         },
         title: {
           fontSize: 16,
@@ -139,9 +165,15 @@ class Post extends Component {
           bold: false,
           marginLeft: 36,
           italics: true
+        },
+        date: {
+          // fontSize: 9,
+          marginBottom: 16,
+          // bold: false,
+          alignment: 'center',
+          // italics: true
         }
       }
-      
     }
 
     for(let i = 0; i < questions.length; i++){
@@ -233,6 +265,7 @@ class Post extends Component {
               <hr />
               
               <div className="text-justify written-copy">
+                  <div id="tempDiv" className="d-none"></div>
                 {!this.state.hasForm ? null : 
                   <div className="container mb-4">
                     <div className="row">

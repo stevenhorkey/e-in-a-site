@@ -25,7 +25,13 @@ class App extends Component {
 
     API.getPages()
       .then(res => {
+        for(let i = 0; i < res.data.length; i++){
+          if(res.data[i].acf.slug.includes(":")){
+            res.data.push(res.data.splice(i,1)[0]);
+          }
+        }
         // console.log(res.data);
+
         this.setState({
           pages: res.data,
           loading: false,

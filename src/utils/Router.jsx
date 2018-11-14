@@ -9,10 +9,17 @@ class Router extends Component {
     return(
       <BrowserRouter>
         <Switch>
+          {/* 404 Page */}
+          <Route path="/not-found" component={PageIndex.NotFound} />
+          <Route
+            path="/compose"
+            component={() => (window.location = 'http://api.everythinginall.com/wp-admin/')}
+          />
           {this.props.pages.map((page, key) => {
             // Mapping routes from wp to react router
             // console.log(page);
             let path = page.acf.slug;
+            console.log(path);
             let ComponentRoute = PageIndex[page.title.rendered];
             if (!path.includes(':')) {
               // For Pages
@@ -32,6 +39,7 @@ class Router extends Component {
               );
             } else {
               // For individual Posts
+              console.log('why')
               return (
               <Route
                   exact
@@ -46,13 +54,9 @@ class Router extends Component {
             }
           })}
 
-          <Route
-            path="/compose"
-            component={() => (window.location = 'http://api.memeandmeaning.com/wp-admin/')}
-          />
+          
 
-          {/* 404 Page */}
-          <Route component={PageIndex.NotFound} />
+          
         </Switch>
       </BrowserRouter>
     );
