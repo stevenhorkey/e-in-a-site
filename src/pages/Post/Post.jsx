@@ -42,12 +42,17 @@ class Post extends Component {
         window.location.replace("/not-found");
       });
 
-    const script = document.createElement("script");
+    const addThis = document.createElement("script");
+    const disqus = document.createElement("script");
 
-    script.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b91dee06e5d3db1';
-    script.async = true;
+    addThis.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b91dee06e5d3db1';
+    disqus.src = 'https://everything-in-all.disqus.com/embed.js';
+    disqus.setAttribute('data-timestamp', +new Date());
+    addThis.async = true;
+    disqus.async = true;
 
-    document.body.appendChild(script);
+    document.body.appendChild(addThis);
+    document.body.appendChild(disqus);
   };
 
   createInputs = () => {
@@ -292,6 +297,9 @@ class Post extends Component {
                   <small className="center-md font-italic col-sm-6 text-right">
                     Image by {post.acf.imageAuthor}
                   </small>
+              </div>
+              <div className="row">
+                <div id="disqus_thread"></div>
               </div>
             </div>
           </article>}
