@@ -52,7 +52,7 @@ class Post extends Component {
     disqus.async = true;
 
     document.body.appendChild(addThis);
-    document.body.appendChild(disqus);
+    // document.body.appendChild(disqus);
   };
 
   createInputs = () => {
