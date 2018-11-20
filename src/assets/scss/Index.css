@@ -286,6 +286,8 @@ a {
   .written-copy p, .written-copy h2, .written-copy ul, .written-copy li {
     margin-bottom: 3rem;
     font-size: 18px; }
+  .written-copy input {
+    margin: 0; }
 
 .pinecast-player {
   position: absolute;

@@ -89,7 +89,7 @@ class Mailchimp extends Component {
                 {status === "empty" && <p style={styles.errorMsg}>{messages.empty}</p>}
                 {status === "error" && <p style={styles.errorMsg}>{messages.error}</p>}
               </div>
-              <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 scale-item d-flex align-items-center" type="submit" value="Sign Me Up"/>
+              <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 px-4 scale-item d-flex align-items-center" type="submit" value="Sign Me Up"/>
               <small className="text-muted text-center d-block">Like you, I hate too many emails. <br/>You may unsubscribe at any time and won't receive more than one per week.<br/>Spam is out of the question.</small>
               <small className="text-muted text-center d-block"></small>
             </form>

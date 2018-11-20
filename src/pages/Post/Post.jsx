@@ -9,6 +9,8 @@ import signature from '../../assets/img/signiture.png';
 import SEOHelmet from '../../components/SEOHelmet/SEOHelmet';
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import Disqus from 'disqus-react';
+
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 class Post extends Component {
@@ -60,6 +62,14 @@ class Post extends Component {
       var text = $(this).text();
       $(this).html(text.replace('__input__', '<input type="text"/>')); 
   });
+  }
+
+  duplicateInputs = () => {
+    let inputs = $('.form-post').find('input');
+    console.log(inputs);
+    inputs.each(function(){
+      $(this).val(inputs[0].value)
+    })
   }
 
   renderWorksheetForm = () => {
@@ -230,6 +240,12 @@ class Post extends Component {
       console.log(post);
       let date = post.date.substring(0, 10);
       let modified = post.modified.substring(0, 10);
+      const disqusShortname = 'everything-in-all';
+      const disqusConfig = {
+          url: window.location.href,
+          identifier: post.id,
+          title: post.title.rendered
+      };
       return (
         <Fragment>
           <SEOHelmet
@@ -257,7 +273,7 @@ class Post extends Component {
           <article id={post.slug} className="post-section bg-light py-3">
             <div className="container text-center">
               <div className="row">
-                <small className="center-md font-italic col-sm-6 text-left">
+                <small onClick={this.duplicateInputs} className="center-md font-italic col-sm-6 text-left">
                   {Parser(post.title.rendered)}
                 </small>
                 <small className="center-md font-italic col-sm-6 text-right">
@@ -294,12 +310,21 @@ class Post extends Component {
                   <small className="center-md font-italic col-sm-6 text-left">
                     {Parser(post.title.rendered)}
                   </small>
+                  {post.acf.imageAuthor ? 
                   <small className="center-md font-italic col-sm-6 text-right">
                     Image by {post.acf.imageAuthor}
                   </small>
+                  : null}
               </div>
               <div className="row">
-                <div id="disqus_thread"></div>
+                <div className="my-3 p-4 bg-gray">
+                  <ComponentIndex.Subscribe/>
+                </div>
+              </div>
+              <div className="row">
+                <div id="disqus_thread" className="col-12">
+                <Disqus.DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+                </div>
               </div>
             </div>
           </article>}
