@@ -356,3 +356,12 @@ footer {
     margin: 20px auto 0px auto; }
   .newsletter-header {
     font-size: 16vw; } }
+
+table, tr, th, td {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 3px; }
+
+tbody {
+  background: white;
+  border-radius: 3px; }
