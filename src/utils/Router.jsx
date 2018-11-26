@@ -39,7 +39,6 @@ class Router extends Component {
               );
             } else {
               // For individual Posts
-              console.log('why')
               return (
               <Route
                   exact

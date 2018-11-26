@@ -137,6 +137,20 @@
   background-color: #f8f9fa;
   border-color: #f8f9fa; }
 
+#at-custom-mobile-bar {
+  height: 40px;
+  background-color: white;
+  position: fixed;
+  top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa !important;
+  z-index: 1; }
+
+.at-custom-mobile-bar .at-icon-wrapper {
+  background: #f8f9fa !important; }
+
 .about-section {
   padding-top: 5rem;
   background: linear-gradient(to bottom, #000000 0%, black 75%, rgba(0, 0, 0, 0.82) 100%); }
@@ -248,6 +262,12 @@ a {
     text-decoration: none;
     color: #557179; }
 
+.home-background {
+  background-image: url("../img/beach.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-attachment: fixed; }
+
 *::selection {
   background: #eae2d7;
   /* WebKit/Blink Browsers */ }
@@ -283,11 +303,13 @@ a {
 .written-copy {
   max-width: 780px;
   margin: 1rem auto; }
-  .written-copy p, .written-copy h2, .written-copy ul, .written-copy li {
+  .written-copy p, .written-copy ul, .written-copy li {
     margin-bottom: 3rem;
     font-size: 18px; }
   .written-copy input {
     margin: 0; }
+  .written-copy h2 {
+    margin: 2rem 0; }
 
 .pinecast-player {
   position: absolute;
@@ -330,7 +352,8 @@ input:focus {
     border-radius: 3px;
     margin-bottom: 2rem;
     height: 100px;
-    padding: 5px; }
+    padding: 5px;
+    margin-top: 10px; }
 
 .btn {
   white-space: normal;

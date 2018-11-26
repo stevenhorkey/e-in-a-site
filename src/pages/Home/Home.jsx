@@ -36,35 +36,61 @@ class Home extends Component {
       return (
         <Fragment>
           {/* <ComponentIndex.Header headImage={page.acf.featuredImage.url}> */}
-          <ComponentIndex.Header headImage={eina}>
-            <div className="mx-auto text-center">
-              {/* <img
-                src={logo}
-                className=""
-                data-aos="zoom-out-down"
-                alt="mm-logo"
-              /> */}
-              <h1 className="text-uppercase display-1">Everything In All</h1>
-              {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
-                {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
-              {/* </p> */}
-              <h4 className="text-white-50 mx-auto my-4 text-uppercase font-weight-light">
-                {Parser(page.acf.header1)}
-              </h4>
-              <p className="text-white-50 mx-auto mt-4 mb-5" data-aos="zoom-out-down">{Parser(page.acf.header2)}</p>
-            </div>
-            {/* <div className="col-md-6">
+          <div className="home-background">
+            <ComponentIndex.Header>
+              <div className="mx-auto text-center">
+                {/* <img
+                  src={logo}
+                  className=""
+                  data-aos="zoom-out-down"
+                  alt="mm-logo"
+                /> */}
+                <h1 className="text-uppercase display-1">Everything In All</h1>
+                {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
+                  {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
+                {/* </p> */}
+                <h4 className="text-white-50 mx-auto my-4 text-uppercase font-weight-light">
+                  {Parser(page.acf.header1)}
+                </h4>
+                <p className="text-white-50 mx-auto mt-4 mb-5" data-aos="zoom-out-down">{Parser(page.acf.header2)}</p>
+              </div>
+            
+            </ComponentIndex.Header>
+            
+            {/* <section className="vh-100 d-flex align-items-center justify-content-center">
+              <h1>Featured Music</h1>
+              <YouTube
+                videoId="uFeLFxW1vuM"
+                // opts={}
+                onReady={this._onReady}
+              />
+            </section> */}
 
-            </div> */}
-          </ComponentIndex.Header>
+            <ComponentIndex.Header opacity="0.6">
+              <div className="mx-auto text-center">
+                {/* <img
+                  src={logo}
+                  className=""
+                  data-aos="zoom-out-down"
+                  alt="mm-logo"
+                /> */}
+                <h1 className="text-uppercase display-1">Featured Music</h1>
+                {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
+                  {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
+                {/* </p> */}
+                <YouTube
+                videoId="uFeLFxW1vuM"
+                // opts={}
+                onReady={this._onReady}
+              />
+              </div>
+              {/* <div className="col-md-6">
+            
+              </div> */}
+            </ComponentIndex.Header>
+            
 
-          {/* <section className="vh-100">
-            <YouTube
-              videoId="uFeLFxW1vuM"
-              // opts={}
-              onReady={this._onReady}
-            />
-          </section> */}
+          </div>
           
           <section className="bg-black text-white" style={{
             border: "2px solid white",

@@ -33,6 +33,13 @@ a {
   }
 }
 
+.home-background{
+  background-image: url('../img/beach.jpg');
+  background-repeat: none;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 *::selection {
   background: #eae2d7; /* WebKit/Blink Browsers */
 }
@@ -74,12 +81,15 @@ a {
 .written-copy {
   max-width: 780px;
   margin: 1rem auto;
-  p, h2, ul, li {
+  p, ul, li {
     margin-bottom: 3rem;
     font-size: 18px;
   }
   input{
     margin: 0;
+  }
+  h2{
+    margin: 2rem 0;
   }
 }
 
@@ -134,6 +144,7 @@ input:focus{
     margin-bottom: 2rem;
     height: 100px;
     padding: 5px;
+    margin-top: 10px;
   }
 }
 

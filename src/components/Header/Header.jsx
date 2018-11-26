@@ -15,10 +15,10 @@ class Header extends Component {
             className="masthead"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.6)), url('" +
+                "linear-gradient(rgba(0, 0, 0, " + (this.props.opacity || '0.2') +"),rgba(0, 0, 0, 0.6)), url('" +
                 this.props.headImage +
                 "')",
-              minHeight: '100vh'
+              height: '100vh'
               // backgroundAttachment: 'fixed'
             }}
           >

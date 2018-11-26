@@ -27,3 +27,19 @@
     background-color: $gray-100;
     border-color: $gray-100;
 }
+
+#at-custom-mobile-bar{
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa!important;
+  z-index: 1;
+}
+
+.at-custom-mobile-bar .at-icon-wrapper, {
+  background: #f8f9fa!important
+}

@@ -92,7 +92,7 @@ class Post extends Component {
 
   createPDF = () => {
 
-    const title = this.state.post.title.rendered.trim();
+    const title = this.state.post.yoast_meta.yoast_wpseo_title.trim();
     const exerciseDescription = this.state.post.acf.exerciseDescription;
     const questions = []
     const answers = []
@@ -291,7 +291,7 @@ class Post extends Component {
                   <div className="container mb-4">
                     <div className="row">
                       <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download the Worksheet as a PDF</button>
-                      <h2 className="text-uppercase font-weight-bold mx-auto my-2 text-center">Or Complete Your Work Below</h2>
+                      <p className="text-uppercase font-weight-bold mx-auto my-2 text-center">Or Complete Your Work Below</p>
                     </div>
                   </div>
                 }
