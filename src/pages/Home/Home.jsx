@@ -66,28 +66,16 @@ class Home extends Component {
               />
             </section> */}
 
-            <ComponentIndex.Header opacity="0.6">
+            {/* <ComponentIndex.Header opacity="0.6">
               <div className="mx-auto text-center">
-                {/* <img
-                  src={logo}
-                  className=""
-                  data-aos="zoom-out-down"
-                  alt="mm-logo"
-                /> */}
                 <h1 className="text-uppercase display-1">Featured Music</h1>
-                {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
-                  {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
-                {/* </p> */}
                 <YouTube
                 videoId="uFeLFxW1vuM"
                 // opts={}
                 onReady={this._onReady}
               />
               </div>
-              {/* <div className="col-md-6">
-            
-              </div> */}
-            </ComponentIndex.Header>
+            </ComponentIndex.Header> */}
             
 
           </div>
