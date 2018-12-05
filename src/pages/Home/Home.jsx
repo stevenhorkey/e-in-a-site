@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import Parser from 'html-react-parser';
 import PropTypes from 'prop-types';
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 import API from '../../utils/API';
-import eina from '../../assets/img/beach.jpg';
+// import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
-import logo from '../../assets/img/mmlogo.png';
-import steven from '../../assets/img/steve.jpg';
+// import logo from '../../assets/img/mmlogo.png';
+// import steven from '../../assets/img/steve.jpg';
 
 class Home extends Component {
   state = {
@@ -171,7 +171,7 @@ class Home extends Component {
                         <ComponentIndex.Card item={post}/>
                       </Fragment>
                     )
-                  }
+                  } else return null;
                 })}
               </div>
             </div>

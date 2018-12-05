@@ -19,7 +19,7 @@ class Router extends Component {
             // Mapping routes from wp to react router
             // console.log(page);
             let path = page.acf.slug;
-            console.log(path);
+            // console.log(path);
             let ComponentRoute = PageIndex[page.title.rendered];
             if (!path.includes(':')) {
               // For Pages

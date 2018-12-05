@@ -50,7 +50,7 @@ class Posts extends Component {
                         />
                       </Fragment>
                     );
-                  }
+                  } else return null;
                 })}
               {/* </div> */}
             </div>

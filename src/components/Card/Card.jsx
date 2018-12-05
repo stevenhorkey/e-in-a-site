@@ -23,7 +23,7 @@ class Card extends Component {
               <div className="card scale-item">
                 <a className="item-scale" href={"/"+item.slug}>
 
-                  <img className="card-img-top" src={item.acf.featuredImage.sizes.large} alt="Card image cap" style={{
+                  <img className="card-img-top" src={item.acf.featuredImage.sizes.large} alt={Parser(item.title.rendered)} style={{
                     width: "100%",
                     maxHeight: 180,
                     objectFit: "cover"

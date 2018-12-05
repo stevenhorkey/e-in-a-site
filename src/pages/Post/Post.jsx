@@ -17,8 +17,17 @@ class Post extends Component {
   state = {
     loading: true,
     post: {},
-    hasForm: false
+    hasForm: false,
+    date: ''
   };
+
+  getDate = () => {
+    let date = new Date();
+        date.setHours(0, 0, 0, 0);
+        date = date.toDateString();
+    // console.log(date);
+    return date
+  }
 
   componentDidMount = () => {
     API.getPost(this.props.match.params.id)
@@ -28,6 +37,7 @@ class Post extends Component {
         this.setState({
           post,
           loading: false,
+          date: this.getDate()
         });
 
         if ($(".form-post").length){
@@ -57,16 +67,31 @@ class Post extends Component {
     // document.body.appendChild(disqus);
   };
 
+  uploadJSON = () => {
+
+  };
+
+  downloadJSON = () => {
+    let obj = {postId: this.state.post.id, title: this.state.post.yoast_meta.yoast_wpseo_title.trim(), date: new Date(), content: $('.written-copy').html()};
+    let data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
+    let temp = $('<a/>');
+    temp.attr('href','data:'+data);
+    temp.attr('download','data.json');
+    temp.appendTo('.written-copy').click(function(){
+      $(this).remove();
+    })[0].click()
+  };
+
   createInputs = () => {
     $('.form-post li').each(function() {
       var text = $(this).text();
       $(this).html(text.replace('__input__', '<input type="text"/>')); 
-  });
-  }
+    });
+  };
 
   duplicateInputs = () => {
     let inputs = $('.form-post').find('input');
-    console.log(inputs);
+    // console.log(inputs);
     inputs.each(function(){
       $(this).val(inputs[0].value)
     })
@@ -80,6 +105,10 @@ class Post extends Component {
         <div className="container">
           <div className="row">
             <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download Your Work as a PDF</button>
+            {/* <button className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-sm-6'>Email me my results</button> */}
+          </div>
+          <div className="row">
+            <button id="download-json-btn" onClick={this.downloadJSON} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download Your Work as a JSON File</button>
             {/* <button className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-sm-6'>Email me my results</button> */}
           </div>
         </div>
@@ -96,9 +125,10 @@ class Post extends Component {
     const exerciseDescription = this.state.post.acf.exerciseDescription;
     const questions = []
     const answers = []
-    let date = new Date();
-        date.setHours(0, 0, 0, 0);
-        date = date.toDateString();
+    // let date = new Date();
+    //     date.setHours(0, 0, 0, 0);
+    //     date = date.toDateString();
+    let date = this.state.date;
     $('.form-post').children('li').each(function() {
       let question = $(this).html().trim();
       // replace inputs with their values in the pdf
@@ -237,7 +267,7 @@ class Post extends Component {
       );
     else {
       let post = this.state.post;
-      console.log(post);
+      // console.log(post);
       let date = post.date.substring(0, 10);
       let modified = post.modified.substring(0, 10);
       const disqusShortname = 'everything-in-all';
@@ -291,12 +321,14 @@ class Post extends Component {
                   <div className="container mb-4">
                     <div className="row">
                       <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download the Worksheet as a PDF</button>
+                      <button id="upload-json-btn" onClick={this.uploadJSON} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Upload Previous Work from JSON File</button>
+                      <input type="file" id="jsonUpload"/>
                       <p className="text-uppercase font-weight-bold mx-auto my-2 text-center">Or Complete Your Work Below</p>
                     </div>
+                   
                   </div>
                 }
                 {Parser(post.content.rendered)}
-                {/* {this.renderWorksheetForm} */}
                 {this.state.hasForm ? this.renderWorksheetForm() : null}
               </div>
               <img

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import API from '../../utils/API';
 import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
-import logo from '../../assets/img/mmlogo.png';
+// import logo from '../../assets/img/mmlogo.png';
 import steven from '../../assets/img/steve.jpg';
 class Music extends Component {
   state = {
@@ -68,7 +68,7 @@ class Music extends Component {
                     <div className="text-left ">
                       <div className="row py-4 d-flex align-items-center">
                         <div className="col-md-4">
-                          <img className="my-3" id="headshot" src={steven}/>
+                          <img className="my-3" id="headshot" alt="headshot" src={steven}/>
                         </div>
                         <div className="col-md-8">
                         <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.

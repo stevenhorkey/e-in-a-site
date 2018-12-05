@@ -5,7 +5,7 @@ import API from '../../utils/API';
 import signature from '../../assets/img/signiture.png';
 
 import ComponentIndex from '../../components/components';
-import logo from '../../assets/img/mmlogo.png';
+// import logo from '../../assets/img/mmlogo.png';
 class About extends Component {
   state = {
     loading: false,

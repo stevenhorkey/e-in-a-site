@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
-import API from "../../utils/API.js";
+// import API from "../../utils/API.js";
 import jsonp from "jsonp"
 import PropTypes from 'prop-types';
 
-import emailLead from "../../assets/img/email-lead.jpg";
-// import Mailchimp from 'react-mailchimp-form';
+// import emailLead from "../../assets/img/email-lead.jpg";
+// // import Mailchimp from 'react-mailchimp-form';
 
 class Mailchimp extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class Mailchimp extends Component {
 
   render() {
     if (!this.state.loading) {
-      const { messages, fields, styles, className } = this.props;
+      const { messages, styles } = this.props;
       const { status } = this.state;
       return (
         <Fragment>
