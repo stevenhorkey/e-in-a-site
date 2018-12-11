@@ -15,7 +15,7 @@ class Home extends Component {
   };
 
   componentDidMount = () => {
-    API.getPosts(9)
+    API.getPosts(20)
       .then(res => {
         this.setState({
           posts: res.data

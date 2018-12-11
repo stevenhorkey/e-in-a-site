@@ -306,10 +306,42 @@ a {
   .written-copy p, .written-copy ul, .written-copy li {
     margin-bottom: 3rem;
     font-size: 18px; }
+  .written-copy .add-question {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    position: relative;
+    bottom: 20px;
+    width: 40px;
+    color: #fff;
+    height: 40px;
+    background: #000000;
+    padding: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: 200ms ease-in-out; }
+  .written-copy .remove-question {
+    opacity: 0;
+    position: relative;
+    top: 5px;
+    float: right;
+    color: indianred;
+    text-align: center;
+    transition: 200ms ease-in-out; }
+  .written-copy .add-question:hover,
+  .written-copy .remove-question:hover {
+    opacity: 1;
+    cursor: pointer; }
   .written-copy input {
     margin: 0; }
   .written-copy h2 {
     margin: 2rem 0; }
+  .written-copy table td {
+    padding: 0; }
+  .written-copy table input, .written-copy table textarea {
+    width: 100%;
+    border: None; }
 
 .pinecast-player {
   position: absolute;

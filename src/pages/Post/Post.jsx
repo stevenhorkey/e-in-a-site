@@ -54,6 +54,12 @@ class Post extends Component {
         window.location.replace("/not-found");
       });
 
+    
+
+    // this.addEventListeners("li", "click");
+    
+
+
     const addThis = document.createElement("script");
     const disqus = document.createElement("script");
 
@@ -67,8 +73,34 @@ class Post extends Component {
     // document.body.appendChild(disqus);
   };
 
-  uploadJSON = () => {
+  processJSON = (result) => {
+    console.log(result);
+    if(result.postId === this.state.post.id){
+      $('.written-copy').html(result.content);
+    } else {
+      alert("sorry")
+    }
+  };
 
+  uploadJSON = (event) => {
+    console.log('upload json')
+    var reader = new FileReader();
+    let id = this.state.post.id
+
+    reader.onload = function(event) {
+      // console.log(event, id);
+      var result = JSON.parse(event.target.result);
+      if(result.postId === id){
+        console.log('yep', result.content);
+        // $('.written-copy').html('');
+        // $('.written-copy').text('<div>fdsaf</div>');
+        console.log(Parser(result.content))
+      } else {
+        alert("sorry")
+      }
+    }
+
+    reader.readAsText(event.target.files[0]);
   };
 
   downloadJSON = () => {
@@ -85,7 +117,7 @@ class Post extends Component {
   createInputs = () => {
     $('.form-post li').each(function() {
       var text = $(this).text();
-      $(this).html(text.replace('__input__', '<input type="text"/>')); 
+      $(this).html(text.replace(/__input__/g, '<input type="text"/>')); 
     });
   };
 
@@ -98,7 +130,27 @@ class Post extends Component {
   }
 
   renderWorksheetForm = () => {
-    $(".form-post").children().after("<textarea class='post-form-ta'/>");
+    $(".form-post").children().after("<i class='fas fa-trash remove-question'></i><textarea class='post-form-ta'/><i class='fas fa-plus add-question'></i>");
+    $(".form-post").prepend("<i class='fas fa-plus add-question'></i>");
+
+
+    // make questions editable
+    $('.form-post li').each(function(){
+      $(this).attr("contenteditable","true");
+    });
+    // add additional questions and textareas
+    $('.written-copy').on('click','.add-question',function(){
+      $(this).after("<li contenteditable='true'>Enter Text Here</li><i class='fas fa-trash remove-question'></i><textarea class='post-form-ta'/><i class='fas fa-plus add-question'></i>");
+    });
+
+    $('.written-copy').on('click','.remove-question',function(){
+      // $(this).after("<li contenteditable='true'>Enter Text Here</li><i class='fas fa-trash remove-question'></i><textarea class='post-form-ta'/><i class='fas fa-plus add-question'></i>");
+      $(this).prev('li').remove();
+      $(this).next('textarea').remove();
+      $(this).next('.add-question').remove();
+      $(this).remove();
+    });
+
 
     return (
       <Fragment>
@@ -108,7 +160,7 @@ class Post extends Component {
             {/* <button className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-sm-6'>Email me my results</button> */}
           </div>
           <div className="row">
-            <button id="download-json-btn" onClick={this.downloadJSON} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download Your Work as a JSON File</button>
+            {/* <button id="download-json-btn" onClick={this.downloadJSON} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download Your Work as a JSON File</button> */}
             {/* <button className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-sm-6'>Email me my results</button> */}
           </div>
         </div>
@@ -267,7 +319,7 @@ class Post extends Component {
       );
     else {
       let post = this.state.post;
-      // console.log(post);
+      console.log(post);
       let date = post.date.substring(0, 10);
       let modified = post.modified.substring(0, 10);
       const disqusShortname = 'everything-in-all';
@@ -276,6 +328,9 @@ class Post extends Component {
           identifier: post.id,
           title: post.title.rendered
       };
+      
+      
+
       return (
         <Fragment>
           <SEOHelmet
@@ -321,8 +376,8 @@ class Post extends Component {
                   <div className="container mb-4">
                     <div className="row">
                       <button onClick={this.createPDF} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Download the Worksheet as a PDF</button>
-                      <button id="upload-json-btn" onClick={this.uploadJSON} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Upload Previous Work from JSON File</button>
-                      <input type="file" id="jsonUpload"/>
+                      {/* <button id="upload-json-btn" onClick={this.uploadJSON} className='text-center text-uppercase btn btn-primary p-2 my-3 scale-item col-12'>Upload Previous Work from JSON File</button> */}
+                      {/* <input type="file" id="jsonUpload" onChange={(event) => this.uploadJSON(event)}/> */}
                       <p className="text-uppercase font-weight-bold mx-auto my-2 text-center">Or Complete Your Work Below</p>
                     </div>
                    
