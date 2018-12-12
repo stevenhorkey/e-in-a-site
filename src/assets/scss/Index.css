@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i");
 #mainNav {
-  min-height: 56px;
+  height: 60px;
   background-color: #000000;
   text-transform: uppercase;
   transition: ease-in-out 200ms;
@@ -263,10 +263,9 @@ a {
     color: #557179; }
 
 .home-background {
-  background-image: url("../img/beach.jpg");
+  background-image: url("http://api.everythinginall.com/wp-content/uploads/2018/12/mark-basarab-157611-unsplash-e1544579887233.jpg");
   background-repeat: none;
-  background-size: cover;
-  background-attachment: fixed; }
+  background-size: cover; }
 
 *::selection {
   background: #eae2d7;
@@ -312,7 +311,7 @@ a {
     display: block;
     width: fit-content;
     position: relative;
-    bottom: 20px;
+    bottom: 10px;
     width: 40px;
     color: #fff;
     height: 40px;

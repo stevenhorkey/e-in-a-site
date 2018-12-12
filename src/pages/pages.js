@@ -6,6 +6,7 @@ import Podcast from './Podcast/Podcast';
 import Downloads from './Downloads/Downloads';
 import NotFound from './NotFound/NotFound';
 import Music from './Music/Music';
+import Login from './Login/Login';
 
 const PageIndex = {
   Home,
@@ -16,6 +17,7 @@ const PageIndex = {
   Posts,
   Podcast,
   Downloads,
+  Login
 };
 
 export default PageIndex;

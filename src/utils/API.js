@@ -13,5 +13,6 @@ export default {
   getPost: slug => axios.get(url + 'posts?slug=' + slug),
   getPage: () => axios.get(url + 'page'),
   sendFile: (slug, file) => axios.post(url + slug, file),
+  login: (email, password) => axios.post('https://api.everythinginall.com/wp-json/' + 'jwt-auth/v1/token')
   // mcAddSubscriber: (data) => axios.post('https://memeandmeaning.us16.list-manage.com/subscribe/post?u=4c73c4e387b1f2b219c1f2af6&amp;id=d25ec94b8f', data)
 };

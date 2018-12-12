@@ -34,10 +34,10 @@ a {
 }
 
 .home-background{
-  background-image: url('../img/beach.jpg');
+  background-image: url('http://api.everythinginall.com/wp-content/uploads/2018/12/mark-basarab-157611-unsplash-e1544579887233.jpg');
   background-repeat: none;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 }
 
 *::selection {
@@ -91,7 +91,7 @@ a {
     display: block;
     width: fit-content;
     position: relative;
-    bottom: 20px;
+    bottom: 10px;
     width: 40px;
     color: $white;
     height: 40px;

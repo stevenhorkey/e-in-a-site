@@ -63,7 +63,7 @@ class Post extends Component {
     const addThis = document.createElement("script");
     const disqus = document.createElement("script");
 
-    addThis.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b91dee06e5d3db1';
+    addThis.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c10200b0c4c37d0';
     disqus.src = 'https://everything-in-all.disqus.com/embed.js';
     disqus.setAttribute('data-timestamp', +new Date());
     addThis.async = true;
@@ -369,7 +369,7 @@ class Post extends Component {
                 
               </div>
               <hr />
-              
+              {/* <div className="addthis_inline_share_toolbox"></div> */}
               <div className="text-justify written-copy">
                   <div id="tempDiv" className="d-none"></div>
                 {!this.state.hasForm ? null : 

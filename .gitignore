@@ -9,6 +9,10 @@
 # production
 /build
 
+*.pem
+commands.txt
+
+
 # misc
 .DS_Store
 .env.local
