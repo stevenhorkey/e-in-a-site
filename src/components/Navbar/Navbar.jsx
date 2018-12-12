@@ -66,11 +66,11 @@ class Navbar extends Component {
                       Blog & Podcast
                     </a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" href="/login">
                       Login
                     </a>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
                     <a className="nav-link js-scroll-trigger" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/everythinginall/">
                       <i className="fab fa-facebook-f"></i>

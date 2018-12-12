@@ -1,6 +1,7 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 @import 'navbar.scss';
+@import 'spinner.scss';
 @import 'masthead.scss';
 @import 'buttons.scss';
 @import 'about.scss';
@@ -163,6 +164,11 @@ input{
 
 input:focus{
   border: 1px solid $primary;
+}
+
+.bg-trans-dark{
+  background: #00000080;
+  border-radius: 3px;
 }
 
 .ws-normal{

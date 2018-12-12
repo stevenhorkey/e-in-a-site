@@ -11,7 +11,7 @@ class Router extends Component {
         <Switch>
           {/* 404 Page */}
           <Route path="/not-found" component={PageIndex.NotFound} />
-          {/* <Route exact path="/login" component={PageIndex.Login} /> */}
+          <Route exact path="/login" component={PageIndex.Login} />
           <Route
             path="/compose"
             component={() => (window.location = 'http://api.everythinginall.com/wp-admin/')}
