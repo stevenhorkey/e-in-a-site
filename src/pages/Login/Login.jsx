@@ -7,8 +7,11 @@ class Login extends Component {
     loading: false,
     email: null,
     password: null,
+    firstname: null,
+    lastname: null,
+    confirmpassword: null,
     whichForm: 'login',
-    async: true
+    async: false
   };
 
   componentDidMount = () => {};
@@ -20,14 +23,25 @@ class Login extends Component {
     })
   }
 
+  handleChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({[name]:value});
+  };
+
+
   attemptLogin = (event) => {
     event.preventDefault();
     this.setState({
       async: true
     })
-    console.log('login')
-    API.login('admin@memeandmeaning.com','Yekrohnevets@1997')
+    console.log('login');
+    API.login({
+      "username": this.state.email,
+      "password": this.state.password
+    })
       .then(res => {
+        localStorage.setItem('jwtToken', res.data.token);
         this.setState({
           async: false
         })
@@ -52,33 +66,33 @@ class Login extends Component {
               <form className="row">
                 {(this.state.whichForm === 'login') ? 
                 <Fragment>
-                  <input name="email" className="w-100 col-md-12" placeholder="youremail@example.com" type="text"/>
-                  <input name="password" className="w-100 col-md-12" placeholder="password" type="password"/>
+                  <input value={this.state.email} onChange={this.handleChange} name="email" className="w-100 col-md-12" placeholder="youremail@example.com" type="text"/>
+                  <input value={this.state.password} onChange={this.handleChange} name="password" className="w-100 col-md-12" placeholder="password" type="password"/>
                   <button className="btn btn-primary col-12 py-2" onClick={event => this.attemptLogin(event)}>Login</button>
                 </Fragment>
                 :
                 <Fragment>
-                  <input name="first-name" className="w-100 col-md-12" placeholder="First Name" type="text"/>
-                  <input name="last-name" className="w-100 col-md-12" placeholder="Last Name" type="text"/>
-                  <input name="email" className="w-100 col-md-12" placeholder="Email" type="text"/>
-                  <input name="password" className="w-100 col-md-12" placeholder="Password" type="password"/>
-                  <input name="password-confirm" className="w-100 col-md-12" placeholder="Confirm Password" type="password"/>
-                  <input name="phone-number" className="w-100 col-md-12" placeholder="Phone Number" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"/>
-                  <input name="phone-number" className="w-100 col-md-12" placeholder="Phone Number" type="checkbox"/>
+                  <input value={this.state.firstname} onChange={this.handleChange} name="firstname" className="w-100 col-md-12" placeholder="First Name" type="text"/>
+                  <input value={this.state.lastname} onChange={this.handleChange} name="lastname" className="w-100 col-md-12" placeholder="Last Name" type="text"/>
+                  <input value={this.state.email} onChange={this.handleChange} name="email" className="w-100 col-md-12" placeholder="Email" type="text"/>
+                  <input value={this.state.password} onChange={this.handleChange} name="password" className="w-100 col-md-12" placeholder="Password" type="password"/>
+                  <input value={this.state.confirmpassword} onChange={this.handleChange} name="passwordconfirm" className="w-100 col-md-12" placeholder="Confirm Password" type="password"/>
+                  <input value={this.state.phonenumber} onChange={this.handleChange} name="phonenumber" className="w-100 col-md-12" placeholder="Phone Number" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"/>
+                  <input value={this.state.phonenumber} onChange={this.handleChange} name="phonenumber" className="w-100 col-md-12" placeholder="Phone Number" type="checkbox"/>
                   <small className="d-inline">I agree to the <a href="/terms-and-conditions" target="_blank">terms and conditions</a></small>
                   <button className="btn btn-primary col-12 py-2" onClick={event => this.attemptLogin(event)}>Signup</button>
                 </Fragment>
                 }
                 {(!this.state.async) ? null : 
-                <div class="sk-folding-cube" style={{
+                <div className="sk-folding-cube" style={{
                   position: "absolute",
                   bottom: 14,
                   right: 45
                 }}>
-                  <div class="sk-cube1 sk-cube"></div>
-                  <div class="sk-cube2 sk-cube"></div>
-                  <div class="sk-cube4 sk-cube"></div>
-                  <div class="sk-cube3 sk-cube"></div>
+                  <div className="sk-cube1 sk-cube"></div>
+                  <div className="sk-cube2 sk-cube"></div>
+                  <div className="sk-cube4 sk-cube"></div>
+                  <div className="sk-cube3 sk-cube"></div>
                 </div>
                 }
               </form>

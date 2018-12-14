@@ -9,6 +9,7 @@
 @import 'subscribe.scss';
 @import 'contact.scss';
 @import 'card.scss';
+@import 'post.scss';
 
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i');
@@ -79,6 +80,10 @@ a {
   z-index: 100;
 }
 
+.post-box{
+  max-width: 780px;
+  margin: 0 auto;
+}
 .written-copy {
   max-width: 780px;
   margin: 1rem auto;
