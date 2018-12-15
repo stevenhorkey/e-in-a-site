@@ -36,6 +36,7 @@ class Login extends Component {
       async: true
     })
     console.log('login');
+    
     API.login({
       "username": this.state.email,
       "password": this.state.password

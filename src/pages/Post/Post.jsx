@@ -19,7 +19,7 @@ class Post extends Component {
     post: {},
     hasForm: false,
     date: '',
-    uploadedJSON: null
+    uploadedJSON: null,
   };
 
   getDate = () => {
@@ -28,6 +28,11 @@ class Post extends Component {
         date = date.toDateString();
     // console.log(date);
     return date
+  }
+
+  getFileName = () => {
+    let title = this.state.post.yoast_meta.yoast_wpseo_title.trim();
+    return (title.substr(0, title.indexOf(' - ')) + ' ' + this.getDate()).replace(/ /g, '-').toLowerCase()
   }
 
   componentDidMount = () => {
@@ -62,17 +67,17 @@ class Post extends Component {
 
 
     const addThis = document.createElement("script");
-    const disqus = document.createElement("script");
+    const icons = document.createElement("script");
 
-    addThis.src = 'https://unpkg.com/ionicons@4.5.0/dist/ionicons.js';
-    // addThis.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c10200b0c4c37d0';
-    disqus.src = 'https://everything-in-all.disqus.com/embed.js';
-    disqus.setAttribute('data-timestamp', +new Date());
+    icons.src = 'https://unpkg.com/ionicons@4.5.0/dist/ionicons.js';
+    addThis.src = '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c10200b0c4c37d0';
+    // disqus.src = 'https://everything-in-all.disqus.com/embed.js';
+    // disqus.setAttribute('data-timestamp', +new Date());
     addThis.async = true;
-    disqus.async = true;
+    icons.async = true;
 
     document.body.appendChild(addThis);
-    // document.body.appendChild(disqus);
+    document.body.appendChild(icons);
   };
 
   processJSON = () => {
@@ -121,7 +126,7 @@ class Post extends Component {
     let data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
     let temp = $('<a/>');
     temp.attr('href','data:'+data);
-    temp.attr('download','data.json');
+    temp.attr('download', `${this.getFileName()}.json`);
     temp.appendTo('.written-copy').click(function(){
       $(this).remove();
     })[0].click()
@@ -143,8 +148,8 @@ class Post extends Component {
   }
 
   renderWorksheetForm = () => {
-    $(".form-post").children().after("<i class='fas fa-trash remove-question'></i><textarea class='post-form-ta'/><i class='fas fa-plus add-question'></i>");
-    $(".form-post").prepend("<i class='fas fa-plus add-question'></i>");
+    $(".form-post").children().after("<ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add-circle\"></ion-icon>");
+    $(".form-post").prepend("<ion-icon class='add-question' name=\"add-circle\"></ion-icon>");
 
 
     // make questions editable
@@ -153,7 +158,7 @@ class Post extends Component {
     });
     // add additional questions and textareas
     $('.written-copy').on('click','.add-question',function(){
-      $(this).after("<li contenteditable='true'>Enter Text Here</li><i class='fas fa-trash remove-question'></i><textarea class='post-form-ta'/><i class='fas fa-plus add-question'></i>");
+      $(this).after("<li contenteditable='true'>Enter Text Here</li><ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add-circle\"></ion-icon>");
     });
 
     $('.written-copy').on('click','.remove-question',function(){
@@ -305,23 +310,10 @@ class Post extends Component {
    
   }
 
-  // sendPDF = () => {
-    // const doc = new jsPDF();
-
-    // doc.text('Hello world!', 10, 10)
-
-    // const pdfFile = doc.output('blob')
-    // console.log(pdfFile);
-
-    // API.sendFile("slug", doc)
-    //     .then(res => {
-    //       console.log(res);
-    //     })
-    //     .catch(err => {
-    //       console.log(err);
-    //     })
-    // doc.save('a4.pdf')
-  // }
+  openShareOptions = () => {
+    console.log('huhu')
+    $('.at-share-btn').click();
+  }
 
   render() {
     if (this.state.loading)
@@ -373,10 +365,11 @@ class Post extends Component {
               <div><ion-icon onClick={this.createPDF} name="document"></ion-icon></div>
               <div><ion-icon onClick={this.downloadJSON} name="download"></ion-icon></div>
               <div><ion-icon name="log-in"></ion-icon></div>
-              <div><ion-icon name="print"></ion-icon></div>
-              <div><ion-icon name="logo-facebook"></ion-icon></div>
-              <div><ion-icon name="logo-twitter"></ion-icon></div>
-              <div><ion-icon name="share-alt"></ion-icon></div>
+              {/* <div><ion-icon name="print"></ion-icon></div> */}
+              {/* <div><ion-icon name="logo-facebook"></ion-icon></div> */}
+              {/* <div><ion-icon name="logo-twitter"></ion-icon></div> */}
+              {/* <div><ion-icon onClick={this.openShareOptions} name="share-alt"></ion-icon></div> */}
+              <div className="addthis_inline_share_toolbox"></div>
             </div>
             <article id={post.slug} className="post-section bg-light py-3">
               <div className="container text-center">
