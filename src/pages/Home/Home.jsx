@@ -112,12 +112,12 @@ class Home extends Component {
                         <div className="col-12 text-justify">
                           {/* <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.</div>
                           <br/> */}
-                          <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.
+                          <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project, and I personally see neither as mutually exclusive.
                           </div>
                           <br/>
                           <div>I likely don't know anything that you don't already know yourself, but I do have an earnest desire to be a decent person and be part of the general solution instead of the general problem. </div>
                           <br/>
-                          <div>I don't want your money. I don't want your attention. I don't want anything from you except a commitment that you will think for yourself, take ownership for the quality of your life, and remain open. If this site and music helps you do that, then consider it a resource. If not, then please go find something that does.
+                          <div>More than anything, this site is for me. It's gradually becoming the resource I want to see and use within the space of personal development. I don't have anything to sell, but I guess my broader request is that you make a commitment to think for yourself, take ownership for the quality of your life, and remain open. If this site and music helps you do that, then consider it a resource. If not, then please go find something that does (and let me know about it because I'm always interested).
                           </div>
                           <br/>                          
                           <div>

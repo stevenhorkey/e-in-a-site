@@ -93,7 +93,7 @@ class Post extends Component {
         
       });
     } else {
-      alert("sorry")
+      alert("Not the right post, please go to the right one.")
     }
   };
 
@@ -102,11 +102,16 @@ class Post extends Component {
     var reader = new FileReader();
     let thas = this;
     reader.onload = function(event) {
-      var jsonObj = JSON.parse(event.target.result);
-      thas.setState({
-        uploadedJSON: jsonObj
-      })
-      thas.processJSON();
+      try {
+        var jsonObj = JSON.parse(event.target.result);
+        thas.setState({
+          uploadedJSON: jsonObj
+        })
+        thas.processJSON();
+      }
+      catch(err){
+        alert('Wrong File Type');
+      }
     }
     let file = event.target.files[0];
     reader.readAsText(file);
@@ -361,16 +366,37 @@ class Post extends Component {
           </ComponentIndex.Header>
           {post.content.rendered === "" ? null : 
           <Fragment>
+
+            {/* side bar btns */}
             <div className="post-btns bg-light">
               <div><ion-icon onClick={this.createPDF} name="document"></ion-icon></div>
               <div><ion-icon onClick={this.downloadJSON} name="download"></ion-icon></div>
-              <div><ion-icon name="log-in"></ion-icon></div>
+              <div><ion-icon data-toggle="modal" data-target="#uploadJSONmodal" name="log-in"></ion-icon></div>
               {/* <div><ion-icon name="print"></ion-icon></div> */}
               {/* <div><ion-icon name="logo-facebook"></ion-icon></div> */}
               {/* <div><ion-icon name="logo-twitter"></ion-icon></div> */}
               {/* <div><ion-icon onClick={this.openShareOptions} name="share-alt"></ion-icon></div> */}
               <div className="addthis_inline_share_toolbox"></div>
             </div>
+
+            {/* <!-- Modal --> */}
+            <div class="modal fade" id="uploadJSONmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Upload Your JSON File to Continue Your Work</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <input type="file" className="w-100" id="jsonUpload" onChange={(event) => this.uploadJSON(event)}/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* actual article */}
             <article id={post.slug} className="post-section bg-light py-3">
               <div className="container text-center">
                 <div className="row">
@@ -386,7 +412,7 @@ class Post extends Component {
                 </div>
                 <hr />
                 {/* <div className="addthis_inline_share_toolbox"></div> */}
-                <div className="text-justify post-box">
+                <div className="text-justify post-box pt-4">
                     <div id="tempDiv" className="d-none"></div>
                   {/* {!this.state.hasForm ? null : 
                     <div className="container mb-4">

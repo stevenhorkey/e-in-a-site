@@ -371,7 +371,7 @@
     color: #fff;
     height: 40px;
     background: #000000;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
     opacity: 0;
     transition: 200ms ease-in-out; }
@@ -380,7 +380,6 @@
     position: relative;
     top: 5px;
     float: right;
-    font-size: 30px;
     color: indianred;
     text-align: center;
     transition: 200ms ease-in-out; }
