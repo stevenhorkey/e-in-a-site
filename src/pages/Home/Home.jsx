@@ -36,8 +36,8 @@ class Home extends Component {
       return (
         <Fragment>
           {/* <ComponentIndex.Header headImage={page.acf.featuredImage.url}> */}
-          <div className="home-background">
-            <ComponentIndex.Header>
+          {/* <div className="home-background"> */}
+            <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?nature"}>
               <div className="mx-auto text-center">
                 {/* <img
                   src={logo}
@@ -78,7 +78,7 @@ class Home extends Component {
             </ComponentIndex.Header> */}
             
 
-          </div>
+          {/* </div> */}
           
           <section className="bg-black text-white" style={{
             border: "2px solid white",

@@ -14,6 +14,11 @@
 .post-btns > div > ion-icon{
     transition: 200ms ease-in-out all;
 }
+.post-info-text{
+  color: darkgray;
+  max-width: 780px;
+  display: block;
+}
 .post-btns > div > ion-icon:hover{
     color: $primary;
     cursor: pointer;
