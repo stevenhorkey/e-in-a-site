@@ -428,7 +428,7 @@ class Post extends Component {
                   <div className="written-copy">
                   {Parser(post.content.rendered)}
                   </div>
-                  {this.state.hasForm ? this.renderWorksheetForm() : null}
+                  
                 </div>
                 <img
                   className="mx-auto mb-3"
@@ -436,6 +436,7 @@ class Post extends Component {
                   src={signature}
                   width="220px"
                 />
+                {this.state.hasForm ? this.renderWorksheetForm() : null}
                 <hr/>
                 <div className="row">
                     <small className="center-md font-italic col-sm-6 text-left">

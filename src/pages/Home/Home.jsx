@@ -6,7 +6,7 @@ import API from '../../utils/API';
 // import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
 // import logo from '../../assets/img/mmlogo.png';
-// import steven from '../../assets/img/steve.jpg';
+import steven from '../../assets/img/benson-steven.jpg';
 
 class Home extends Component {
   state = {
