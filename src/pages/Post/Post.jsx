@@ -82,10 +82,9 @@ class Post extends Component {
 
   processJSON = () => {
     let result = this.state.uploadedJSON;
-    console.log(result);
+    // console.log(result);
 
     if(result.postId === this.state.post.id){
-      console.log('caneg html')
       $('.written-copy').html(result.content);
       $("input,select,textarea").each(function() {
         
@@ -98,7 +97,7 @@ class Post extends Component {
   };
 
   uploadJSON = (event) => {
-    console.log('uploadJSON')
+    // console.log('uploadJSON')
     var reader = new FileReader();
     let thas = this;
     reader.onload = function(event) {
@@ -315,11 +314,6 @@ class Post extends Component {
    
   }
 
-  openShareOptions = () => {
-    console.log('huhu')
-    $('.at-share-btn').click();
-  }
-
   render() {
     if (this.state.loading)
       return null
@@ -330,7 +324,7 @@ class Post extends Component {
       // );
     else {
       let post = this.state.post;
-      console.log(post);
+      // console.log(post);
       let date = post.date.substring(0, 10);
       let modified = post.modified.substring(0, 10);
       const disqusShortname = 'everything-in-all';
@@ -376,21 +370,20 @@ class Post extends Component {
               {/* <div><ion-icon name="print"></ion-icon></div> */}
               {/* <div><ion-icon name="logo-facebook"></ion-icon></div> */}
               {/* <div><ion-icon name="logo-twitter"></ion-icon></div> */}
-              {/* <div><ion-icon onClick={this.openShareOptions} name="share-alt"></ion-icon></div> */}
               <div className="addthis_inline_share_toolbox"></div>
             </div>
 
             {/* <!-- Modal --> */}
-            <div class="modal fade" id="uploadJSONmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Upload Your JSON File to Continue Your Work</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal fade" id="uploadJSONmodal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div className="modal-dialog modal-dialog-centered" role="document">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h5 className="modal-title" id="exampleModalLongTitle">Upload Your JSON File to Continue Your Work</h5>
+                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="modal-body">
+                  <div className="modal-body">
                     <input type="file" className="w-100" id="jsonUpload" onChange={(event) => this.uploadJSON(event)}/>
                   </div>
                 </div>

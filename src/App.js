@@ -23,6 +23,12 @@ class App extends Component {
     AOS.init({
       duration: 1600,
     });
+    $(document).ready(function(){
+      $('#preloader').fadeOut('slow');
+      $(window).on("load", function(){
+        $('#asset-preloader').fadeOut('slow');
+      });
+    });
 
     API.getPages()
       .then(res => {
@@ -45,12 +51,7 @@ class App extends Component {
   };
 
   componentDidUpdate = () => {
-    $(document).ready(function(){
-      $('#preloader').fadeOut('slow');
-      $(window).on("load", function(){
-        $('#asset-preloader').fadeOut('slow');
-      });
-    });
+    
   }
 
   render() {
