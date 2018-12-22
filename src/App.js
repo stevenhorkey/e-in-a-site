@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './assets/scss/Index.css';
 import 'aos/dist/aos.css';
 import Router from "./utils/Router";
+import $ from 'jquery';
 
 import ComponentIndex from './components/components';
 
@@ -36,11 +37,21 @@ class App extends Component {
           pages: res.data,
           loading: false,
         });
+        $("")
       })
       .catch(err => {
         console.log(err);
       });
   };
+
+  componentDidUpdate = () => {
+    $(document).ready(function(){
+      $('#preloader').fadeOut('slow');
+      $(window).on("load", function(){
+        $('#asset-preloader').fadeOut('slow');
+      });
+    });
+  }
 
   render() {
     if (!this.state.loading) {

@@ -30,11 +30,11 @@ class PageWrapper extends Component {
         <SEOHelmet
           item={page}
         />
-        <LoadingScreen
+        {/* <LoadingScreen
           loading={this.state.loading}
           bgColor="#000000"
           logoSrc={loadingImg}
-        >
+        > */}
           <Fragment>
             {/* If home page, don't show default header structure */}
             {!page.acf.standardHeader ? null : (
@@ -47,7 +47,7 @@ class PageWrapper extends Component {
             <ComponentRoute handleLoad={this.handleLoad} page={page} {...props} />
             {page.acf.quoteBox ? <ComponentIndex.QuoteBox /> : null}
           </Fragment>
-        </LoadingScreen>
+        {/* </LoadingScreen> */}
       </Fragment>
     );
   }

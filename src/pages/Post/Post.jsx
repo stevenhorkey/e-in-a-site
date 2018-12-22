@@ -322,11 +322,12 @@ class Post extends Component {
 
   render() {
     if (this.state.loading)
-      return (
-        <LoadingScreen loading={true} bgColor="#000000" logoSrc={loadingImg}>
-          <div />
-        </LoadingScreen>
-      );
+      return null
+      // (
+      //   // <LoadingScreen loading={true} bgColor="#000000" logoSrc={loadingImg}>
+      //     <div />
+      //   </LoadingScreen>
+      // );
     else {
       let post = this.state.post;
       console.log(post);
