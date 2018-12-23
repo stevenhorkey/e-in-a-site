@@ -152,8 +152,8 @@ class Post extends Component {
   }
 
   renderWorksheetForm = () => {
-    $(".form-post").children().after("<ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add-circle\"></ion-icon>");
-    $(".form-post").prepend("<ion-icon class='add-question' name=\"add-circle\"></ion-icon>");
+    $(".form-post").children().after("<ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add\"></ion-icon>");
+    $(".form-post").prepend("<ion-icon class='add-question' name=\"add\"></ion-icon>");
 
 
     // make questions editable
@@ -162,7 +162,7 @@ class Post extends Component {
     });
     // add additional questions and textareas
     $('.written-copy').on('click','.add-question',function(){
-      $(this).after("<li contenteditable='true'>Enter Text Here</li><ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add-circle\"></ion-icon>");
+      $(this).after("<li contenteditable='true'>Enter Text Here</li><ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add\"></ion-icon>");
     });
 
     $('.written-copy').on('click','.remove-question',function(){
@@ -438,6 +438,7 @@ class Post extends Component {
                   </div>
                   
                 </div>
+                
                 <img
                   className="mx-auto mb-3"
                   alt="signature"
@@ -457,7 +458,7 @@ class Post extends Component {
                     : null}
                 </div>
                 <div className="row">
-                  <div className="my-3 p-4 bg-gray">
+                  <div className="my-3 p-4 bg-gray box-shadow">
                     <ComponentIndex.Subscribe/>
                   </div>
                 </div>

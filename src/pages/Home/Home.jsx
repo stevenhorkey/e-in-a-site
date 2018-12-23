@@ -49,9 +49,10 @@ class Home extends Component {
                 {/* <p className="text-white-50 mx-auto mt-4 mb-5 display-1">
                   {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
                 {/* </p> */}
-                <h4 className="text-white-50 mx-auto my-4 text-uppercase font-weight-light">
+                <h2 className="text-white-50 mx-auto my-4 text-uppercase font-weight-light">
                   {Parser(page.acf.header1)}
-                </h4>
+                  
+                </h2>
                 <p className="text-white-50 mx-auto mt-4 mb-5" data-aos="zoom-out-down">{Parser(page.acf.header2)}</p>
               </div>
             
