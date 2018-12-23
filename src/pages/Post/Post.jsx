@@ -86,7 +86,7 @@ class Post extends Component {
 
     if(result.postId === this.state.post.id){
       $('.written-copy').html(result.content);
-      $("input,select,textarea").each(function() {
+      $("input,select,.post-form-ta").each(function() {
         
         $(this).val($(this).attr('value')); 
         
@@ -118,7 +118,7 @@ class Post extends Component {
   };
 
   downloadJSON = () => {
-    $("input,select,textarea").each(function() {
+    $("input,select,.post-form-ta").each(function() {
       if($(this).is("[type='checkbox']") || $(this).is("[type='checkbox']")) {
         $(this).attr("checked", $(this).attr("checked"));
       }
@@ -152,7 +152,7 @@ class Post extends Component {
   }
 
   renderWorksheetForm = () => {
-    $(".form-post").children().after("<ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add\"></ion-icon>");
+    $(".form-post").children().after("<ion-icon class='remove-question' name=\"close\"></ion-icon><div class='post-form-ta' contenteditable=''></div><ion-icon class='add-question' name=\"add\"></ion-icon>");
     $(".form-post").prepend("<ion-icon class='add-question' name=\"add\"></ion-icon>");
 
 
@@ -162,13 +162,13 @@ class Post extends Component {
     });
     // add additional questions and textareas
     $('.written-copy').on('click','.add-question',function(){
-      $(this).after("<li contenteditable='true'>Enter Text Here</li><ion-icon class='remove-question' name=\"close\"></ion-icon><textarea class='post-form-ta'/><ion-icon class='add-question' name=\"add\"></ion-icon>");
+      $(this).after("<li contenteditable='true'>Enter Text Here</li><ion-icon class='remove-question' name=\"close\"></ion-icon><div class='post-form-ta' contenteditable=''></div><ion-icon class='add-question' name=\"add\"></ion-icon>");
     });
 
     $('.written-copy').on('click','.remove-question',function(){
       // $(this).after("<li contenteditable='true'>Enter Text Here</li><i class='fas fa-trash remove-question'></i><textarea class='post-form-ta'/><i class='fas fa-plus add-question'></i>");
       $(this).prev('li').remove();
-      $(this).next('textarea').remove();
+      $(this).next('.post-form-ta').remove();
       $(this).next('.add-question').remove();
       $(this).remove();
     });
@@ -219,8 +219,8 @@ class Post extends Component {
       // push question to questions list for pdfmake
       questions.push(question);
     });
-    $('.form-post').children('textarea').each(function() {
-      answers.push($(this).val().trim());
+    $('.form-post').children('.post-form-ta').each(function() {
+      answers.push($(this).text().trim());
     });
 
     let doc = {
