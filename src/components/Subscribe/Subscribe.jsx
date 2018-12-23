@@ -62,7 +62,8 @@ class Mailchimp extends Component {
             
             <div className="row d-flex align-items-center">
               <span className="col-12 text-justify">
-              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE COURSE: CHART A PATH & FIND YOUR DIRECTION
+              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE RESOURCES, UPDATES, AND MUSIC
+              {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE COURSE: CHART A PATH & FIND YOUR DIRECTION */}
 </h2>
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">More Value - Less Emails</h2> */}
               
