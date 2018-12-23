@@ -11,7 +11,7 @@ class PageWrapper extends Component {
   };
 
   componentDidMount = () => {
-    // console.log('page wrapper mounted');
+    console.log('page wrapper mounted');
   };
 
   handleLoad = bool => {
@@ -38,7 +38,7 @@ class PageWrapper extends Component {
           <Fragment>
             {/* If home page, don't show default header structure */}
             {!page.acf.standardHeader ? null : (
-              <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?nature"}>
+              <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?"+page.acf.unsplashTags}>
                 <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
                   {Parser(page.title.rendered)}
                 </h1>

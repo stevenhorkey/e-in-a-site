@@ -72,6 +72,12 @@
     h2{
       margin: 2rem 0;
     }
+    .scale-item {
+      transition: 200ms ease-in-out all;
+    }
+    .scale-item:hover{
+      scale: transform(1.02);
+    }
     table {
       td{
         padding: 0;

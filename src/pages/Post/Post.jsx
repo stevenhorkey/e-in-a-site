@@ -314,6 +314,19 @@ class Post extends Component {
    
   }
 
+  formatTitle = () => {
+    let title = this.state.post.title.rendered.split(" &#8211; ");
+    console.log(title);
+    return (
+      <div className="mx-auto text-uppercase" data-aos="zoom-out-down">
+        <h1>
+          {title[0]}
+        </h1>
+        <h2>{title[1]}</h2>
+      </div>
+    )
+  }
+
   render() {
     if (this.state.loading)
       return null
@@ -323,6 +336,7 @@ class Post extends Component {
       //   </LoadingScreen>
       // );
     else {
+      this.formatTitle();
       let post = this.state.post;
       // console.log(post);
       let date = post.date.substring(0, 10);
@@ -344,9 +358,7 @@ class Post extends Component {
 
           <ComponentIndex.Header headImage={post.acf.featuredImage.url}>
             <div className="row w-100 mx-auto">
-              <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
-                {Parser(post.title.rendered)}
-              </h1>
+              {this.formatTitle()}
             </div>
             <br/>
             {!post.acf.pinecastId ? null : (

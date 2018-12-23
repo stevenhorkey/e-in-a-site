@@ -35,6 +35,21 @@ a {
   }
 }
 
+blockquote{
+  margin: 0 0 1rem;
+  font-style: italic;
+  background: #e0e0e0;
+  border: 1px solid #c1c1c1;
+  padding: 3rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 6px 7px rgba(0,0,0,0.24);
+  transition: 200ms;
+  margin-bottom: 3rem;
+}
+
+blockquote:hover{
+  transform: scale(1.02);
+}
+
 .home-background{
   background-image: url('http://api.everythinginall.com/wp-content/uploads/2018/12/mark-basarab-157611-unsplash-e1544579887233.jpg');
   background-repeat: none;

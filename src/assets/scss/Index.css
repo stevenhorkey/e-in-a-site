@@ -169,12 +169,19 @@
     letter-spacing: 0.8rem;
     background: -webkit-linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.5));
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text; }
+    -webkit-background-clip: text;
+    margin-bottom: 1rem; }
   .masthead #not-found {
     -webkit-text-fill-color: black !important; }
   .masthead h2 {
-    max-width: 20rem;
-    font-size: 1rem; }
+    font-family: 'Lato', sans-serif;
+    font-size: 2.5vw;
+    line-height: 2.5rem;
+    letter-spacing: 0.8rem;
+    background: -webkit-linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.5));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin: 0 auto; }
   .masthead p {
     font-family: 'Lato', sans-serif;
     color: #f8f9fa;
@@ -193,10 +200,11 @@
       .masthead h1 {
         font-size: 4rem;
         line-height: 6.5rem;
-        letter-spacing: 0.8rem; }
-      .masthead h2 {
-        max-width: 30rem;
-        font-size: 1.25rem; } }
+        letter-spacing: 0.8rem; } }
+  @media (max-width: 768px) {
+    .masthead h2 {
+      line-height: 3;
+      font-size: 4vw; } }
 
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
@@ -397,6 +405,10 @@
     margin: 0; }
   .written-copy h2 {
     margin: 2rem 0; }
+  .written-copy .scale-item {
+    transition: 200ms ease-in-out all; }
+  .written-copy .scale-item:hover {
+    scale: transform(1.02); }
   .written-copy table td {
     padding: 0; }
   .written-copy table input, .written-copy table textarea {
@@ -444,6 +456,19 @@ a {
   a:focus, a:hover {
     text-decoration: none;
     color: #557179; }
+
+blockquote {
+  margin: 0 0 1rem;
+  font-style: italic;
+  background: #e0e0e0;
+  border: 1px solid #c1c1c1;
+  padding: 3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 6px 7px rgba(0, 0, 0, 0.24);
+  transition: 200ms;
+  margin-bottom: 3rem; }
+
+blockquote:hover {
+  transform: scale(1.02); }
 
 .home-background {
   background-image: url("http://api.everythinginall.com/wp-content/uploads/2018/12/mark-basarab-157611-unsplash-e1544579887233.jpg");
