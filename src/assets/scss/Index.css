@@ -419,7 +419,7 @@
   .written-copy .remove-question {
     opacity: 0;
     position: relative;
-    top: 5px;
+    bottom: 30px;
     float: right;
     color: indianred;
     font-size: 30px;
@@ -495,7 +495,7 @@ blockquote {
   font-style: italic;
   background: #e0e0e0;
   border: 1px solid #c1c1c1;
-  padding: 3rem;
+  padding: 3rem 3rem 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 6px 7px rgba(0, 0, 0, 0.24);
   transition: 200ms;
   margin-bottom: 3rem; }
