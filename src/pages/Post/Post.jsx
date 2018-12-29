@@ -421,7 +421,12 @@ class Post extends Component {
                 </div>
                 <hr />
                 {/* <div className="addthis_inline_share_toolbox"></div> */}
-                <small className='post-info-text mx-auto text-center p-2 my-3'>Feel free to edit, add, and delete questions as needed. Use the toolbar to download a pdf of you work or save a file to upload and continue later. Click <a href="/how-to-use" target="_blank">here</a> for more information on how to use this site.</small>
+                {(this.state.hasForm) ? 
+                  <small className='post-info-text mx-auto text-center p-2 my-3'>Feel free to edit, add, and delete questions as needed. Use the toolbar to download a pdf of you work or save a file to upload and continue later. Click <a href="/how-to-use" target="_blank">here</a> for more information on how to use this site.</small>
+                  :
+                  null
+                }
+                
                 <div className="text-justify post-box pt-4">
                     <div id="tempDiv" className="d-none"></div>
                   {/* {!this.state.hasForm ? null : 
