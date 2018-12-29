@@ -118,14 +118,15 @@ class Home extends Component {
                           <br/>
                           <div>I likely don't know anything that you don't already know yourself, but I do have an earnest desire to be a decent person and be part of the general solution instead of the general problem. </div>
                           <br/>
-                          <div>More than anything, this site is for me. It's gradually becoming the resource I want to see and use within the space of personal development. I don't have anything to sell, but I guess my broader request is that you make a commitment to think for yourself, take ownership for the quality of your life, and remain open. If this site and music helps you do that, then consider it a resource. If not, then please go find something that does (and let me know about it because I'm always interested).
+                          <div>More than anything, this site is for me. It's gradually becoming the resource I want to see and use within the space of personal development. I don't have anything to sell, but I guess my broader request is that you make a commitment to think for yourself, take ownership for the quality of your life, and remain open.
                           </div>
                           <br/>                          
                           <div>
                           This is about approaching our time here in a more sincere way, one that is grounded in humility and an honest connection amidst our shared human condition.
                           </div>
                           <br/>
-                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self and this life we are all a part of.</div>
+                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self, one another,
+                             and this life we are all a part of.</div>
                           {/* <br/> */}
                           <br/>
 

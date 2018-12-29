@@ -219,8 +219,11 @@ class Post extends Component {
       // push question to questions list for pdfmake
       questions.push(question);
     });
+    
     $('.form-post').children('.post-form-ta').each(function() {
-      answers.push($(this).text().trim());
+      let text = $(this).html().trim().replace(/<\/div>/g,'')
+      text = text.replace(/<div>/g,'\n').replace(/<br>/g,'\n');
+      answers.push(text);
     });
 
     let doc = {
