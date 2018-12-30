@@ -431,7 +431,7 @@ class Post extends Component {
                 <hr />
                 {/* <div className="addthis_inline_share_toolbox"></div> */}
                 {(this.state.hasForm) ? 
-                  <small className='post-info-text mx-auto text-center p-2 my-3'>Feel free to edit, add, and delete questions as needed. Use the toolbar to download a pdf of you work or save a file to upload and continue later. Click <a href="/how-to-use" target="_blank">here</a> for more information on how to use this site.</small>
+                  <small className='post-info-text mx-auto text-center p-2 my-3'>Feel free to edit, add, and delete questions as needed. Use the toolbar to download a pdf of you work or save a file to upload and continue later. Click <a href="/how-to-use-this-site" target="_blank">here</a> for more information on how to use this site.</small>
                   :
                   null
                 }
