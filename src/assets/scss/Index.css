@@ -438,10 +438,15 @@
   .written-copy .scale-item:hover {
     scale: transform(1.02); }
   .written-copy table td {
-    padding: 0; }
+    padding: 0px; }
   .written-copy table input, .written-copy table .post-form-ta {
     width: 100%;
     border: None; }
+  .written-copy .no-edit {
+    margin-bottom: 3rem; }
+    .written-copy .no-edit td, .written-copy .no-edit tr {
+      padding: 5px;
+      text-align: center; }
 
 .pinecast-player {
   position: absolute;

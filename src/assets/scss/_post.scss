@@ -111,12 +111,19 @@
     }
     table {
       td{
-        padding: 0;
+        padding: 0px;
       }
       input, .post-form-ta{
         width: 100%;
         border: None;
       }
+    }
+    .no-edit{
+      td,tr{
+        padding: 5px;
+        text-align: center;
+      }
+      margin-bottom: 3rem;
     }
 }
   
