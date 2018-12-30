@@ -62,15 +62,20 @@ class Mailchimp extends Component {
             
             <div className="row d-flex align-items-center">
               <span className="col-12 text-justify">
-              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE RESOURCES, UPDATES, AND MUSIC
+              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE MINI-COURSE TO GET UNSTUCK
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE COURSE: CHART A PATH & FIND YOUR DIRECTION */}
 </h2>
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">More Value - Less Emails</h2> */}
               
               </span>
               {/* <img className="col-5" src={emailLead} /> */}
-              <div className="my-4 text-center">Sign up for the free Everything In All newsletter and receive a free downloadable pdf of my Top 22 Questions for Self Reflection, as well as updates as to when new music and exercises are released.</div> 
-              {/* <div className="my-4 text-left">I don't care for all the junk marketing emails people typically send after they convince me to sign up to get their free thing. <br/>So, here's my deal for you: I won't send you much at all and I won't try to build a relationship with you over email so I can merely suck money out of you later. Instead, I'll trust that if you find this work valuable, you will do what you need to and utilize this as you see fit. <br/>When a new song or exercise becomes available, I'll let you know. Other than that, our inboxes are full enough as they are.</div>  */}
+              <div className="text-center">
+                <p className="my-4 text-center">Sign up for the free Everything in All Newsletter and recieve exclusive access to my FREE mini-course:</p> 
+                <h4 className="text-uppercase font-bold mb-4">Getting Unstuck - How to Find Direction & Feel Better Now.</h4>
+                <p>I know... I have a full inbox already as well. I won't be sending much aside from the occational music release and post update. Feel free to unsubscribe at anytime.</p>
+              </div>
+              {/* <div className="my-4 text-center">Sign up for the free Everything In All newsletter and receive a free downloadable pdf of my Top 22 Questions for Self Reflection, as well as updates as to when new music and exercises are released.</div>  */}
+              
             </div>
 
             <form className="row d-block text-left" onSubmit={this.handleSubmit.bind(this)}>

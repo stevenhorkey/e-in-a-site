@@ -109,6 +109,12 @@
     .scale-item:hover{
       scale: transform(1.02);
     }
+    .li-subtext{
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
     table {
       td{
         padding: 0px;

@@ -159,6 +159,12 @@ class Post extends Component {
     // make questions editable
     $('.form-post li').each(function(){
       $(this).attr("contenteditable","true");
+      // create subtext
+      if($(this).html().includes(" : ")){
+        let liParts = $(this).html().split(" : ");
+        $(this).html(liParts[0]);
+        $(this).after(`<small class="li-subtext">${liParts[1]}</small>`);
+      }
     });
     // add additional questions and textareas
     $('.written-copy').on('click','.add-question',function(){
@@ -319,6 +325,9 @@ class Post extends Component {
 
   formatTitle = () => {
     let title = this.state.post.title.rendered.split(" &#8211; ");
+    title.map((item, index, arr) => {
+      arr[index] = item.toUpperCase().replace(/&#038;/g, '&');
+    });
     console.log(title);
     return (
       <div className="mx-auto text-uppercase" data-aos="zoom-out-down">
