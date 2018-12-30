@@ -25,9 +25,9 @@ class Template extends Component {
                 404
               </h1>
 
-              <h2 className="text-black mx-auto mt-2 mb-5">
+              <h3 className="text-black mx-auto mt-2 mb-5">
                 Uh oh... the page you are trying to visit doesn't exist.
-              </h2>
+              </h3>
               <a href="/" className="btn btn-primary js-scroll-trigger">
                 Go Back to Home Page
               </a>
