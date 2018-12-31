@@ -37,7 +37,7 @@ class Home extends Component {
         <Fragment>
           {/* <ComponentIndex.Header headImage={page.acf.featuredImage.url}> */}
           {/* <div className="home-background"> */}
-            <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?nature"}>
+            <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?nature,winter"}>
               <div className="mx-auto text-center">
                 {/* <img
                   src={logo}
