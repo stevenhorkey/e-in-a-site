@@ -10,6 +10,9 @@ import SEOHelmet from '../../components/SEOHelmet/SEOHelmet';
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import Disqus from 'disqus-react';
+import documentSVG from '../../assets/icons/_ionicons_svg_md-document.svg';
+import downloadSVG from '../../assets/icons/_ionicons_svg_md-download.svg';
+import uploadSVG from '../../assets/icons/_ionicons_svg_md-log-in.svg';
 
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -388,9 +391,12 @@ class Post extends Component {
 
             {/* side bar btns */}
             <div className="post-btns bg-light">
-              <div><ion-icon onClick={this.createPDF} name="document"></ion-icon></div>
-              <div><ion-icon onClick={this.downloadJSON} name="download"></ion-icon></div>
-              <div><ion-icon data-toggle="modal" data-target="#uploadJSONmodal" name="log-in"></ion-icon></div>
+              <img onClick={this.createPDF} src={documentSVG} />
+              <img onClick={this.downloadJSON} src={downloadSVG} />
+              <img data-toggle="modal" data-target="#uploadJSONmodal" src={uploadSVG} />
+              {/* <div><ion-icon  name="document">H</ion-icon></div> */}
+              {/* <div><ion-icon onClick={this.downloadJSON} name="download"></ion-icon></div>
+              <div><ion-icon data-toggle="modal" data-target="#uploadJSONmodal" name="log-in"></ion-icon></div> */}
               {/* <div><ion-icon name="print"></ion-icon></div> */}
               {/* <div><ion-icon name="logo-facebook"></ion-icon></div> */}
               {/* <div><ion-icon name="logo-twitter"></ion-icon></div> */}

@@ -9,7 +9,13 @@
     font-size: 26px;
     border-radius: 0 12px 12px 0;
     border-left: 0;
+    img {
+      margin-bottom: 12px;
+      cursor: pointer;
+
+    }
 }
+
 
 @media (max-width: 839px){
   .post-btns{
@@ -31,9 +37,13 @@
     border-left: 0;
     height: 45px;
   }
+  .post-btns img,
   .post-btns div{
     margin: 0 auto;
     text-align: center;
+    max-width: 34px;
+    margin-bottom: unset;
+    cursor: pointer !important;
   }
 }
 
@@ -57,6 +67,8 @@
   .written-copy {
     max-width: 780px;
     margin: 1rem auto;
+    text-align: justify;
+      text-align-last: center;
     p{
       text-align: justify;
       text-align-last: center;

@@ -350,6 +350,9 @@
   font-size: 26px;
   border-radius: 0 12px 12px 0;
   border-left: 0; }
+  .post-btns img {
+    margin-bottom: 12px;
+    cursor: pointer; }
 
 @media (max-width: 839px) {
   .post-btns {
@@ -370,9 +373,13 @@
     font-size: 26px;
     border-left: 0;
     height: 45px; }
+  .post-btns img,
   .post-btns div {
     margin: 0 auto;
-    text-align: center; } }
+    text-align: center;
+    max-width: 34px;
+    margin-bottom: unset;
+    cursor: pointer !important; } }
 
 .post-btns > div > ion-icon {
   transition: 200ms ease-in-out all; }
@@ -392,7 +399,12 @@
 
 .written-copy {
   max-width: 780px;
-  margin: 1rem auto; }
+  margin: 1rem auto;
+  text-align: justify;
+  text-align-last: center; }
+  .written-copy p {
+    text-align: justify;
+    text-align-last: center; }
   .written-copy p, .written-copy ul, .written-copy li {
     margin-bottom: 3rem;
     font-size: 18px; }
