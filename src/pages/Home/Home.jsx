@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Parser from 'html-react-parser';
 import PropTypes from 'prop-types';
+import getRandomPic from '../../utils/headerImages';
 // import YouTube from 'react-youtube';
 import API from '../../utils/API';
 // import eina from '../../assets/img/beach.jpg';
@@ -32,12 +33,13 @@ class Home extends Component {
     if (!this.state.loading) {
       let page = this.props.page;
       let posts = this.state.posts;
-      // console.log(posts);
+      let headerImg = getRandomPic();
+      console.log(headerImg);
       return (
         <Fragment>
           {/* <ComponentIndex.Header headImage={page.acf.featuredImage.url}> */}
           {/* <div className="home-background"> */}
-            <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?nature,winter"}>
+            <ComponentIndex.Header headImage={headerImg}>
               <div className="mx-auto text-center">
                 {/* <img
                   src={logo}

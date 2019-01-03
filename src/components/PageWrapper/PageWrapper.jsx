@@ -4,6 +4,7 @@ import Parser from 'html-react-parser';
 import loadingImg from '../../assets/img/loading.gif';
 import ComponentIndex from '../../components/components';
 import SEOHelmet from '../SEOHelmet/SEOHelmet';
+import getRandomPic from '../../utils/headerImages';
 
 class PageWrapper extends Component {
   state = {
@@ -38,7 +39,7 @@ class PageWrapper extends Component {
           <Fragment>
             {/* If home page, don't show default header structure */}
             {!page.acf.standardHeader ? null : (
-              <ComponentIndex.Header headImage={"https://source.unsplash.com/2000x1400/?"+page.acf.unsplashTags}>
+              <ComponentIndex.Header headImage={getRandomPic()}>
                 <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
                   {Parser(page.title.rendered)}
                 </h1>
