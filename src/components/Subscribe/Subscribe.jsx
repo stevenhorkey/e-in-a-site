@@ -62,7 +62,7 @@ class Mailchimp extends Component {
             
             <div className="row d-flex align-items-center">
               <span className="col-12 text-justify">
-              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE MINI-COURSE TO GET UNSTUCK
+              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE MINI-COURSE TO GAIN DIRECTION
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE COURSE: CHART A PATH & FIND YOUR DIRECTION */}
 </h2>
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">More Value - Less Emails</h2> */}
@@ -70,9 +70,9 @@ class Mailchimp extends Component {
               </span>
               {/* <img className="col-5" src={emailLead} /> */}
               <div className="text-center">
-                <p className="my-4 text-center">Sign up for the free Everything in All Newsletter and recieve exclusive access to my FREE mini-course:</p> 
+                <p className="my-4 text-center">Sign up for the free Everything in All Newsletter and receive exclusive access to my FREE mini-course:</p> 
                 <h4 className="text-uppercase font-bold mb-4">Getting Unstuck - How to Find Direction & Feel Better Now.</h4>
-                <p>I know... I have a full inbox already as well. I won't be sending much aside from the occational music release and post update. Feel free to unsubscribe at anytime.</p>
+                <p>I know... I have a full inbox already as well. I won't be sending much aside from the occasional music release and post update. Feel free to unsubscribe at anytime.</p>
               </div>
               {/* <div className="my-4 text-center">Sign up for the free Everything In All newsletter and receive a free downloadable pdf of my Top 22 Questions for Self Reflection, as well as updates as to when new music and exercises are released.</div>  */}
               
