@@ -1,5 +1,7 @@
 export default function getRandomPic(){
 
+    console.log('pic')
+
     const pics = [
         // nature
         'http://api.everythinginall.com/wp-content/uploads/2019/01/jurolu3flta.jpg',

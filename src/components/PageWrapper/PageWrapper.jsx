@@ -5,14 +5,19 @@ import loadingImg from '../../assets/img/loading.gif';
 import ComponentIndex from '../../components/components';
 import SEOHelmet from '../SEOHelmet/SEOHelmet';
 import getRandomPic from '../../utils/headerImages';
+import blackBG from '../../assets/img/black-abstract-background-8.jpg';
 
 class PageWrapper extends Component {
   state = {
     loading: true,
+    headerImg: blackBG
   };
 
   componentDidMount = () => {
     console.log('page wrapper mounted');
+    this.setState({
+      headerImg: getRandomPic()
+    })
   };
 
   handleLoad = bool => {
@@ -39,7 +44,7 @@ class PageWrapper extends Component {
           <Fragment>
             {/* If home page, don't show default header structure */}
             {!page.acf.standardHeader ? null : (
-              <ComponentIndex.Header headImage={getRandomPic()}>
+              <ComponentIndex.Header headImage={this.state.headerImg}>
                 <h1 className="mx-auto text-uppercase" data-aos="zoom-out-down">
                   {Parser(page.title.rendered)}
                 </h1>

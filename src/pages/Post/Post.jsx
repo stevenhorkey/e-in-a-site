@@ -63,6 +63,20 @@ class Post extends Component {
         window.location.replace("/not-found");
       });
 
+      /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = function() {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("mainNav").style.top = "0";
+          document.getElementsByClassName("post-btns")[0].style.top = "60px";
+        } else {
+          document.getElementById("mainNav").style.top = "-60px";
+          document.getElementsByClassName("post-btns")[0].style.top = "0";
+        }
+        prevScrollpos = currentScrollPos;
+      }
+
     
 
     // this.addEventListeners("li", "click");
@@ -118,6 +132,7 @@ class Post extends Component {
     let file = event.target.files[0];
     reader.readAsText(file);
     // this.processJSON();
+    window.$("#uploadJSONmodal").modal('hide')
   };
 
   downloadJSON = () => {
@@ -166,7 +181,7 @@ class Post extends Component {
       if($(this).html().includes(" : ")){
         let liParts = $(this).html().split(" : ");
         $(this).html(liParts[0]);
-        $(this).after(`<small class="li-subtext">${liParts[1]}</small>`);
+        $(this).after(`<small contenteditable='true' class="li-subtext">${liParts[1]}</small>`);
       }
     });
     // add additional questions and textareas
@@ -413,8 +428,8 @@ class Post extends Component {
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div className="modal-body">
-                    <input type="file" className="w-100" id="jsonUpload" onChange={(event) => this.uploadJSON(event)}/>
+                  <div className="modal-body d-flex align-items-center justify-content-center">
+                    <input type="file" className="" id="jsonUpload" onChange={(event) => this.uploadJSON(event)}/>
                   </div>
                 </div>
               </div>

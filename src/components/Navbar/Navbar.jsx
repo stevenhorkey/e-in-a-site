@@ -17,6 +17,7 @@ class Navbar extends Component {
     script.async = true;
 
     document.body.appendChild(script);
+    
   };
 
   render() {
@@ -62,8 +63,8 @@ class Navbar extends Component {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link js-scroll-trigger" href="/posts">
-                      Blog & Podcast
+                    <a className="nav-link js-scroll-trigger" href="/courses">
+                      Courses
                     </a>
                   </li>
                   {/* <li className="nav-item">

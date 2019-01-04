@@ -22,8 +22,14 @@ body {
   min-width: 320px;
 }
 
+.cinema-text{
+  letter-spacing: 0.15rem;
+  line-height: 2.2rem;
+}
+
 p {
-  font-size: 18px;
+  font-size: 17px !important;
+  margin-bottom: 0;
 }
 
 a {
@@ -74,6 +80,18 @@ blockquote:hover{
 
 .bg-primary {
   background-color: $primary !important;
+}
+
+#steven-headshot{
+  max-width: 100px;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+#home-signiture{
+  max-width: 200px;
+  // margin: 10px;
 }
 
 .text-primary {

@@ -15,7 +15,7 @@ class Header extends Component {
             className="masthead"
             style={{
               backgroundImage:
-                "linear-gradient(rgba(0, 0, 0, " + (this.props.opacity || '0.4') +"),rgba(0, 0, 0, 0.6)), url('" +
+                "linear-gradient(rgba(0, 0, 0, " + (this.props.opacity || '0.6') +"),rgba(0, 0, 0, 0.8)), url('" +
                 this.props.headImage +
                 "')",
               height: '100vh'

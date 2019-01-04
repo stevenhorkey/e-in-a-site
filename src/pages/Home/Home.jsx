@@ -7,16 +7,23 @@ import API from '../../utils/API';
 // import eina from '../../assets/img/beach.jpg';
 import ComponentIndex from '../../components/components';
 // import logo from '../../assets/img/mmlogo.png';
-import steven from '../../assets/img/benson-steven.jpg';
+import steven from '../../assets/img/steven-headshot.jpg';
+import signiture from '../../assets/img/signiture-negative.png';
+import blackBG from '../../assets/img/black-abstract-background-8.jpg';
+
 
 class Home extends Component {
   state = {
     loading: false,
     posts: [],
+    headerImg: blackBG
   };
 
   componentDidMount = () => {
-    API.getPosts(20)
+    this.setState({
+      headerImg: getRandomPic()
+    })
+    API.getPosts(6)
       .then(res => {
         this.setState({
           posts: res.data
@@ -33,13 +40,11 @@ class Home extends Component {
     if (!this.state.loading) {
       let page = this.props.page;
       let posts = this.state.posts;
-      let headerImg = getRandomPic();
-      console.log(headerImg);
       return (
         <Fragment>
           {/* <ComponentIndex.Header headImage={page.acf.featuredImage.url}> */}
           {/* <div className="home-background"> */}
-            <ComponentIndex.Header headImage={headerImg}>
+            <ComponentIndex.Header headImage={this.state.headerImg}>
               <div className="mx-auto text-center">
                 {/* <img
                   src={logo}
@@ -52,7 +57,8 @@ class Home extends Component {
                   {/* MUSIC - GROWTH - BEAUTY - TRUTH - LOVE - HUMILITY */}
                 {/* </p> */}
                 <h2 className="text-white-50 mx-auto my-4 text-uppercase font-weight-light">
-                  {Parser(page.acf.header1)}
+                   Music & Resources to Create A Profound Life
+                  {/* {Parser(page.acf.header1)} */}
                   
                 </h2>
                 <p className="text-white-50 mx-auto mt-4 mb-5" data-aos="zoom-out-down">{Parser(page.acf.header2)}</p>
@@ -91,7 +97,7 @@ class Home extends Component {
               <div className="row d-flex align-items-center">
                 <div className='col-md-6 order-md-1 order-2 py-5'>
                   <div className="container">
-                    <h2 className="text-uppercase">Welcome</h2>
+                    <h2 className="text-uppercase cinema-text">Welcome</h2>
                       {/* <div className="row py-4 d-flex align-items-center"> */}
                         {/* <div className="col-md-4">
                           <img className="my-3" id="headshot" src={steven}/>
@@ -115,35 +121,50 @@ class Home extends Component {
                         <div className="col-12 text-justify">
                           {/* <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project.</div>
                           <br/> */}
-                          <div>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project, and I personally see neither as mutually exclusive.
-                          </div>
+                          <p>My name is Steven Horkey and Everything In All is an endeavor of mine where I seek to learn, understand, and embody a life well lived. It's also a music project, and I personally see neither as mutually exclusive.
+                          </p>
                           <br/>
-                          <div>I likely don't know anything that you don't already know yourself, but I do have an earnest desire to be a decent person and be part of the general solution instead of the general problem. </div>
+                          <p>I likely don't know anything that you don't already know yourself, but I do have an earnest desire to be a decent person and be part of the general solution instead of the general problem. </p>
                           <br/>
-                          <div>More than anything, this site is for me. It's gradually becoming the resource I want to see and use within the space of personal development. I don't have anything to sell, but I guess my broader request is that you make a commitment to think for yourself, take ownership for the quality of your life, and remain open.
-                          </div>
+                          <p>More than anything, this site is for me. It's gradually becoming the resource I want to see and use within the space of personal development. I don't have anything to sell, but I guess my broader request is that you make a commitment to think for yourself, take ownership for the quality of your life, and remain open.
+                          </p>
                           <br/>                          
-                          <div>
+                          <p>
                           This is about approaching our time here in a more sincere way, one that is grounded in humility and an honest connection amidst our shared human condition.
-                          </div>
+                          </p>
                           <br/>
-                          <div>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self, one another,
-                             and this life we are all a part of.</div>
+                          <p>I have yet to find anything more valuable than the process of cultivating a greater connection to one's own self, one another,
+                             and this life we are all a part of.</p>
                           {/* <br/> */}
                           <br/>
-
                           <div className="text-center">In the most loving and transparent sense, <span className="font-italic">live better.</span></div>
+                          <div className="col-12 d-flex align-items-center justify-content-center py-4">
+                            <img id="steven-headshot" src={steven} />
+                            <div className="flex-column d-flex align-items-center">
+                              <img id="home-signiture" src={signiture}/>
+                              <small className="text-muted">Steven Horkey</small>
+                            </div>
                           </div>
+
+                          
                           {/* <a href="/about" className="mx-auto text-uppercase btn btn-primary py-2 my-3 scale-item d-flex align-items-center" >Learn More</a> */}
                         
                       </div>
+
+                    </div>
+                    </div>
+                    </div>
+                      <div className="col-md-6 order-1 order-md-12 py-5">
+                        <ComponentIndex.Subscribe/>
+                      </div>
                   </div>
+                {/* </div> */}
+                
+                  
+
                 </div>
-                <div className="col-md-6 order-1 order-md-12 py-5">
-                  <ComponentIndex.Subscribe/>
-                </div>
-              </div>
-            </div>
+              {/* </div> */}
+            {/* </div> */}
           </section>
           {/* <section className="py-4 bg-gray">
             <div className="container text-center">
@@ -164,8 +185,8 @@ class Home extends Component {
           <section className="bg-white py-5">
             <div className="container text-center">
               <div className='row w-100 m-auto'>
-                <h2 id='recent-posts' className="mr-auto text-uppercase font-weight-bold mb-0">Recent Posts</h2>
-                <a href="/posts" id='view-all-posts' className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
+                <h2 id='recent-posts' className="mr-auto text-uppercase font-weight-bold mb-0">Recent Courses</h2>
+                <a href="/courses" id='view-all-posts' className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Courses</a>
               </div>
               <div className="row mt-3">
                 {posts.map((post,key) => {

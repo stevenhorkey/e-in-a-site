@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 // import API from "../../utils/API.js";
 import jsonp from "jsonp"
 import PropTypes from 'prop-types';
+import leadImg from "../../assets/img/getting_unstuck_course.png";
 
 // import emailLead from "../../assets/img/email-lead.jpg";
 // // import Mailchimp from 'react-mailchimp-form';
@@ -62,23 +63,24 @@ class Mailchimp extends Component {
             
             <div className="row d-flex align-items-center">
               <span className="col-12 text-justify">
-              <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE MINI-COURSE TO GAIN DIRECTION
+              <h2 className="display-4 text-uppercase text-primary newsletter-header cinema-text">FREE COURSE <br/> FIND DIRECTION & TAKE ACTION
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">FREE COURSE: CHART A PATH & FIND YOUR DIRECTION */}
 </h2>
               {/* <h2 className="display-4 text-uppercase text-primary newsletter-header">More Value - Less Emails</h2> */}
               
               </span>
               {/* <img className="col-5" src={emailLead} /> */}
-              <div className="text-center">
-                <p className="my-4 text-center">Sign up for the free Everything in All Newsletter and receive exclusive access to my FREE mini-course:</p> 
-                <h4 className="text-uppercase font-bold mb-4">Getting Unstuck - How to Find Direction & Feel Better Now.</h4>
-                <p>I know... I have a full inbox already as well. I won't be sending much aside from the occasional music release and post update. Feel free to unsubscribe at anytime.</p>
+              <div className="text-center col-12">
+                <p className=" text-center">Sign up for the free Everything in All Newsletter and receive exclusive access to my FREE mini-course:</p> 
+                {/* <h4 className="text-uppercase font-bold mb-4 cinema-text">Getting Unstuck <br/> How to Find Direction & Feel Better Now</h4> */}
+                <img className="w-100 my-4" src={leadImg} />
+                <p>I know... I have a full inbox already as well. I won't be sending much aside from the occasional music release and course update. Feel free to unsubscribe at anytime.</p>
               </div>
               {/* <div className="my-4 text-center">Sign up for the free Everything In All newsletter and receive a free downloadable pdf of my Top 22 Questions for Self Reflection, as well as updates as to when new music and exercises are released.</div>  */}
               
             </div>
 
-            <form className="row d-block text-left" onSubmit={this.handleSubmit.bind(this)}>
+            <form className="row d-block text-left mt-3" onSubmit={this.handleSubmit.bind(this)}>
               <div className="col-sm-6 d-inline-block">
                 <label className="" htmlFor="first-name">First Name</label>
                 <input onBlur={({ target }) => this.setState({ ["FNAME"]: target.value })} name="FNAME" id="first-name" onChange={this.handleChange} defaultValue={this.state["FNAME"]} className="w-100 px-2 py-1"/>
@@ -98,7 +100,7 @@ class Mailchimp extends Component {
                 {status === "empty" && <p style={styles.errorMsg}>{messages.empty}</p>}
                 {status === "error" && <p style={styles.errorMsg}>{messages.error}</p>}
               </div>
-              <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 px-4 scale-item d-flex align-items-center" type="submit" value="Sign Me Up"/>
+              <input disabled={status === "sending" || status === "success"} className="mx-auto text-uppercase btn btn-primary p-2 my-3 px-4 scale-item d-flex align-items-center" type="submit" value="Send Me My Free Course"/>
               <small className="text-muted text-center d-block">You may unsubscribe at any time and spam is out of the question.</small>
               <small className="text-muted text-center d-block"></small>
             </form>

@@ -1,8 +1,9 @@
+
 #mainNav {
   height: 60px;
   background-color: $black;
   text-transform: uppercase;
-  transition: ease-in-out 200ms;
+  transition: 300ms top;
   border-bottom: white 2px solid;
   .nav-container{
     max-width: 2000px;
@@ -40,7 +41,7 @@
     padding-bottom: 0;
     border-bottom: none;
     background-color: transparent;
-    transition: background-color 0.3s ease-in-out;
+    transition: 300ms all;
     .navbar-brand {
       padding: 0.5rem 0;
       color: fade-out($gray-100, 0.5);

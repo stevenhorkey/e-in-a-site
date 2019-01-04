@@ -4,7 +4,7 @@
   height: 60px;
   background-color: #000000;
   text-transform: uppercase;
-  transition: ease-in-out 200ms;
+  transition: 300ms top;
   border-bottom: white 2px solid; }
   #mainNav .nav-container {
     max-width: 2000px; }
@@ -32,7 +32,7 @@
       padding-bottom: 0;
       border-bottom: none;
       background-color: transparent;
-      transition: background-color 0.3s ease-in-out; }
+      transition: 300ms all; }
       #mainNav .navbar-brand {
         padding: 0.5rem 0;
         color: rgba(248, 249, 250, 0.5); }
@@ -293,8 +293,10 @@
     border: 0; }
 
 .newsletter-header {
-  font-size: 4vw;
-  text-align: center; }
+  font-size: 3.5vw;
+  text-align: center;
+  font-weight: 500;
+  line-height: 3.5rem !important; }
 
 .contact-section {
   padding: 5rem 0 0; }
@@ -339,20 +341,56 @@
 .card:hover {
   border: 1px #88a4ac solid; }
 
+.card-col {
+  margin: 1rem 0; }
+
+.card-font {
+  letter-spacing: 0.6rem;
+  line-height: 1.5rem; }
+  .card-font h3 {
+    line-height: 2.5rem;
+    margin-bottom: 40px; }
+  .card-font h5 {
+    line-height: 2.0rem; }
+
+.post-card {
+  background-position: center !important;
+  background-size: cover !important;
+  padding: 6.5rem 2rem;
+  height: 100%;
+  color: #eee;
+  cursor: pointer; }
+
+.at-resp-share-element .at-share-btn {
+  margin: 0 !important; }
+
 .post-btns {
   position: fixed;
   z-index: 1;
-  top: 30%;
+  width: 100%;
+  display: inline-block;
+  transition: 300ms top;
+  display: flex;
+  top: 60px;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 1px 1px 1px #00000047;
   box-shadow: 1px 1px 1px #00000047;
   text-align: center;
   padding: .5rem;
-  /* border: 1px solid gray; */
+  border-radius: unset;
+  text-align: justify;
   font-size: 26px;
-  border-radius: 0 12px 12px 0;
-  border-left: 0; }
-  .post-btns img {
-    margin-bottom: 12px;
-    cursor: pointer; }
+  border-left: 0;
+  height: 45px; }
+
+.post-btns img,
+.post-btns div {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 34px;
+  margin-bottom: unset;
+  cursor: pointer !important; }
 
 @media (max-width: 839px) {
   .post-btns {
@@ -360,6 +398,7 @@
     z-index: 1;
     width: 100%;
     display: inline-block;
+    transition: 300ms top;
     display: flex;
     top: 60px;
     align-items: center;
@@ -406,7 +445,7 @@
     font-size: 18px; }
   .written-copy p {
     text-align: justify;
-    max-width: 550px;
+    max-width: 600px;
     margin: 0 auto 3rem; }
   .written-copy h2 {
     text-align: center;
@@ -416,7 +455,7 @@
     text-align: justify; }
   .written-copy .add-question {
     text-align: center;
-    margin: 0 auto;
+    margin: 5rem auto;
     display: block;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -498,7 +537,7 @@
     width: 100%;
     border-radius: 2px;
     margin-bottom: 2rem;
-    min-height: 100px;
+    min-height: 140px;
     height: fit-content;
     background: white;
     text-align: left;
@@ -517,8 +556,13 @@ body {
   background: #f8f9fa;
   min-width: 320px; }
 
+.cinema-text {
+  letter-spacing: 0.15rem;
+  line-height: 2.2rem; }
+
 p {
-  font-size: 18px; }
+  font-size: 17px !important;
+  margin-bottom: 0; }
 
 a {
   color: #88a4ac; }
@@ -560,6 +604,15 @@ blockquote:hover {
 
 .bg-primary {
   background-color: #88a4ac !important; }
+
+#steven-headshot {
+  max-width: 100px;
+  border: 1px solid #eee;
+  border-radius: 50%;
+  margin: 10px; }
+
+#home-signiture {
+  max-width: 200px; }
 
 .text-primary {
   color: #88a4ac !important; }

@@ -135,8 +135,8 @@ class Music extends Component {
           <section className="bg-white py-5">
             <div className="container text-center">
               <div className='row w-100 m-auto'>
-                <h2 className="mr-auto text-uppercase font-weight-bold pt-1 mb-0">Recent Posts</h2>
-                <a href="/posts" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Posts</a>
+                <h2 className="mr-auto text-uppercase font-weight-bold pt-1 mb-0">Recent Courses</h2>
+                <a href="/courses" className="ml-auto text-uppercase btn btn-primary py-2 scale-item d-flex align-items-center" >View All Courses</a>
               </div>
               <div className="row mt-3">
                 {posts.map((post,key) => {

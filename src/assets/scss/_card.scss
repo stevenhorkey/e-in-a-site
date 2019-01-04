@@ -19,3 +19,29 @@
 .card:hover{
     border: 1px $primary solid;
 }
+
+.card-col{
+    margin: 1rem 0;
+}
+
+.card-font{
+    // background: -webkit-linear-gradient(rgba(248, 249, 250, 0.9), rgba(248, 249, 250, 0.5));
+    letter-spacing: 0.6rem;
+    line-height: 1.5rem;
+    h3{
+        line-height: 2.5rem;
+        margin-bottom: 40px;
+    }
+    h5{
+        line-height: 2.0rem;
+    }
+}
+
+.post-card{
+    background-position: center !important;
+    background-size: cover !important;
+    padding: 6.5rem 2rem;
+    height: 100%;
+    color: #eee;
+    cursor: pointer;
+}

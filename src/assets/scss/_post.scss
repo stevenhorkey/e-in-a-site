@@ -1,21 +1,52 @@
-.post-btns{
-    position: fixed;
-    z-index: 1;
-    top: 30%;
-    box-shadow: 1px 1px 1px #00000047;
-    text-align: center;
-    padding: .5rem;
-    /* border: 1px solid gray; */
-    font-size: 26px;
-    border-radius: 0 12px 12px 0;
-    border-left: 0;
-    img {
-      margin-bottom: 12px;
-      cursor: pointer;
+// .post-btns{
+//     position: fixed;
+//     z-index: 1;
+//     top: 30%;
+//     box-shadow: 1px 1px 1px #00000047;
+//     text-align: center;
+//     padding: .5rem;
+//     /* border: 1px solid gray; */
+//     font-size: 26px;
+//     border-radius: 0 12px 12px 0;
+//     border-left: 0;
+//     img {
+//       margin-bottom: 12px;
+//       cursor: pointer;
 
-    }
+//     }
+// }
+.at-resp-share-element .at-share-btn{
+  margin: 0 !important;
 }
 
+.post-btns{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  display: inline-block;
+  transition: 300ms top;
+  display: flex;
+  top: 60px;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 1px 1px 1px #00000047;
+  box-shadow: 1px 1px 1px #00000047;
+  text-align: center;
+  padding: .5rem;
+  border-radius: unset;
+  text-align: justify;
+  font-size: 26px;
+  border-left: 0;
+  height: 45px;
+}
+.post-btns img,
+.post-btns div{
+  margin: 0 auto;
+  text-align: center;
+  max-width: 34px;
+  margin-bottom: unset;
+  cursor: pointer !important;
+}
 
 @media (max-width: 839px){
   .post-btns{
@@ -23,6 +54,7 @@
     z-index: 1;
     width: 100%;
     display: inline-block;
+    transition: 300ms top;
     display: flex;
     top: 60px;
     align-items: center;
@@ -75,7 +107,7 @@
     p{
       text-align: justify;
       // text-align-last: center;
-      max-width: 550px;
+      max-width: 600px;
       margin: 0 auto 3rem;
     }
     h2{
@@ -88,7 +120,7 @@
     }
     .add-question{
       text-align: center;
-      margin: 0 auto;
+      margin: 5rem auto;
       display: block;
       width: -webkit-fit-content;
       width: -moz-fit-content;
@@ -191,7 +223,7 @@
         width: 100%;
         border-radius: 2px;
         margin-bottom: 2rem;
-        min-height: 100px;
+        min-height: 140px;
         height: fit-content;
         background: white;
         text-align: left;

@@ -3,7 +3,7 @@ import API from '../../utils/API';
 
 import ComponentIndex from '../../components/components';
 
-class Posts extends Component {
+class Courses extends Component {
   state = {
     // loading: true,
     posts: [],
@@ -32,7 +32,7 @@ class Posts extends Component {
       <Fragment>
         <ComponentIndex.Section sectionName={page.title.rendered}>
           <div className="text-center pt-4">
-            <div className="row">
+            <div className="row row-eq-height">
                 {posts.map((post, key) => {
                   if(!post.acf.hidden){
                     return (
@@ -52,4 +52,4 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+export default Courses;
