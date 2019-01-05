@@ -447,10 +447,10 @@
     text-align: justify;
     max-width: 600px;
     margin: 0 auto 3rem; }
-  .written-copy h2 {
+  .written-copy h2, .written-copy h3 {
     text-align: center;
     max-width: 600px;
-    margin: 2rem auto; }
+    margin: 3rem auto; }
   .written-copy ul, .written-copy ol {
     text-align: justify; }
   .written-copy .add-question {
@@ -571,14 +571,13 @@ a {
     color: #557179; }
 
 blockquote {
-  margin: 0 0 1rem;
+  margin: 4rem 1rem;
   font-style: italic;
   background: #e0e0e0;
   border: 1px solid #c1c1c1;
-  padding: 3rem 3rem;
+  padding: 3rem 3rem 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 6px 7px rgba(0, 0, 0, 0.24);
-  transition: 200ms;
-  margin-bottom: 3rem; }
+  transition: 200ms; }
 
 blockquote:hover {
   transform: scale(1.02); }

@@ -350,9 +350,9 @@ class Post extends Component {
     return (
       <div className="mx-auto text-uppercase" data-aos="zoom-out-down">
         <h1>
-          {title[0]}
+          {Parser(title[0])}
         </h1>
-        <h2>{title[1]}</h2>
+        <h2>{Parser(title[1])}</h2>
       </div>
     )
   }
@@ -388,7 +388,7 @@ class Post extends Component {
 
           <ComponentIndex.Header headImage={post.acf.featuredImage.url}>
             <div className="row w-100 mx-auto">
-              {this.formatTitle()}
+            {this.formatTitle()}
             </div>
             <br/>
             {!post.acf.pinecastId ? null : (

@@ -21,9 +21,9 @@ class Card extends Component {
     return (
       <div className="mx-auto text-uppercase text-center card-font">
         <h3>
-          {title[0]}
+          {Parser(title[0])}
         </h3>
-        <h5>{title[1]}</h5>
+        <h5>{Parser(title[1] || "")}</h5>
       </div>
     )
   }
